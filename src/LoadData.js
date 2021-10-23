@@ -14,3 +14,11 @@ export function LoadShops( f ) {
             f(data);
         });
 }
+
+export function LoadRentalUnits( f ) {
+    fetch('/data/rentalUnits.json')
+        .then(response => response.json())
+        .then(data => {
+            f(data);
+        });
+}

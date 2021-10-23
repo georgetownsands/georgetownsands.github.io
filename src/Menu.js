@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { alpha, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import Contact from "./Contact";
+import Rent from "./Rent";
 import Restaurants from "./Restaurants";
 import Shopping from "./Shopping";
 import Main from "./Main";
@@ -16,8 +17,9 @@ import {
   SECTION_CONTACT,
   SECTION_RESTAURANTS,
   SECTION_SHOPPING,
+  SECTION_RENT,
 } from "./Constants";
-import { LoadRestaurants, LoadShops } from "./LoadData";
+import { LoadRestaurants, LoadShops, LoadRentalUnits } from "./LoadData";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,8 +88,16 @@ const initialShops = [
   },
 ];
 
+const initialRentalUnits = [
+  {
+    id: 1,
+    name: "",
+  },
+];
+
 var initialMenuSections = [
   { id: SECTION_MAIN, menuName: "Main" },
+  { id: SECTION_RENT, menuName: "Rent" },
   { id: SECTION_RESTAURANTS, menuName: "Restaurants" },
   { id: SECTION_SHOPPING, menuName: "Shopping" },
   { id: SECTION_CONTACT, menuName: "Contact" },
@@ -102,12 +112,14 @@ export default function Child() {
   const [isDataLoaded, setIsDataLoaded] = React.useState(false);
   const [restaurants, setRestaurants] = React.useState(initialRestaurants);
   const [shops, setShops] = React.useState(initialShops);
+  const [rentalUnits, setRentalUnits] = React.useState(initialRentalUnits);
 
   useEffect(() => {
     if (!isDataLoaded) {
       LoadRestaurants(setRestaurants);
       setIsDataLoaded(true);
       LoadShops(setShops);
+      LoadRentalUnits(setRentalUnits);
     }
   }, [isDataLoaded]);
 
@@ -170,6 +182,7 @@ export default function Child() {
       </AppBar>
       <div className={classes.root}></div>
       <Main sectionId={sectionId}></Main>
+      <Rent sectionId={sectionId} rentalUnits={rentalUnits}></Rent>
       <Contact sectionId={sectionId}></Contact>
       <Restaurants
         sectionId={sectionId}
