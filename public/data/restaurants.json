@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "AQUA Restaurant",
+    "phoneNumber": "252.261.9700",
+    "address": "1174 Duck Rd Downstairs, Duck, NC 27949",
+    "description": "Waterfront dining in Duck.",
+    "webSite": "https://aquarestaurantobx.com/"
+  },
+  {
+    "id": "2",
+    "name": "The Blue Point",
+    "phoneNumber": "252.261.8090",
+    "address": "1240 Duck Road Duck, NC 27949",
+    "description": "Mellow spot for locally sourced, high-end seafood & Southern fare, with occasional live music.",
+    "webSite": "https://thebluepoint.com"
+  },
+  {
+    "id": "3",
+    "name": "Roadside Bar & Grill",
+    "description": "Seafood-centric American dining in a quaint renovated house with an upstairs bar & grill.",
+    "address": "1193 Duck Rd, Duck, NC 27949",
+    "phoneNumber": "252.261.5729",
+    "webSite": "https://duckroadside.com/"
+  }
+]
