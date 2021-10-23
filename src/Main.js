@@ -2,11 +2,18 @@ import React from "react";
 import { SECTION_MAIN } from "./Constants";
 
 import { useStyles } from "./Styles";
-
-import georgetownsands from "./georgetownsands.jpeg";
-
+import ImageGallery from 'react-image-gallery';
+import 'react-image-gallery/styles/css/image-gallery.css';
 export default function Main({ sectionId }) {
   const classes = useStyles();
+  const images = [
+    {
+      original: '/images/georgetownsands.jpeg',
+    },
+    {
+      original: '/images/GeorgetownSandsBeach.jpg',
+    },
+  ];
   return (
     <div className={classes.root}>
       {sectionId === SECTION_MAIN && (
@@ -21,7 +28,7 @@ export default function Main({ sectionId }) {
             A townhome community in the town of Duck, North Carolina.
           </div>
           <div className={classes.bodycentered}>
-            <img src={georgetownsands} className={classes.img} alt="example" width="75%" />
+            <ImageGallery items={images} />
           </div>
           <div className={classes.bodycentered}>
             <ul>
