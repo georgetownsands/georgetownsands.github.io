@@ -33,6 +33,14 @@
   },
   {
     "id": "5",
+    "name": "Duck Pizza",
+    "description": "The best craft pizza on the northern Outer Banks",
+    "address": "1171 Duck Rd, Scarborough Lane Shoppes, Duck, NC",
+    "phoneNumber": "252.255.0099",
+    "webSite": "https://www.duckpizza.com/"
+  },
+  {
+    "id": "7",
     "name": "eventide",
     "address": "1190 Duck Road, Duck, NC 27949",
     "phoneNumber": "252.715.1216",
