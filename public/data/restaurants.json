@@ -62,5 +62,13 @@
     "address": "1193 Duck Rd, Duck, NC 27949",
     "phoneNumber": "252.261.5729",
     "webSite": "https://duckroadside.com/"
+  },
+  {
+    "id": "50",
+    "name": "Treehouse Coffee Co.",
+    "description": "Pure coffee love.  Located in Scarborough Faire Shopping Village.",
+    "address": "1177 Duck Rd, Duck, NC 27949",
+    "phoneNumber": "252.722.3606",
+    "webSite": "https://treehousecoffeenc.com/"
   }
 ]
