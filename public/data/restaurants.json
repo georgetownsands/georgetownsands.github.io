@@ -16,7 +16,23 @@
     "webSite": "https://thebluepoint.com"
   },
   {
-    "id": "3",
+    "id": "5",
+    "name": "eventide",
+    "address": "1190 Duck Road, Duck, NC 27949",
+    "phoneNumber": "252.715.1216",
+    "description": "sip savor sunset",
+    "webSite": "https://www.eventideduck.com/"
+  },
+  {
+    "id": "10",
+    "name": "NC Coast Grill & Bar",
+    "description": "A Chef-Driven Outer Banks Restaurant Experience",
+    "address": "1184 Duck Rd Duck, NC 27949",
+    "phoneNumber": "252.261.8666",
+    "webSite": "https://nccoastobx.com/"
+  },
+  {
+    "id": "30",
     "name": "Roadside Bar & Grill",
     "description": "Seafood-centric American dining in a quaint renovated house with an upstairs bar & grill.",
     "address": "1193 Duck Rd, Duck, NC 27949",
