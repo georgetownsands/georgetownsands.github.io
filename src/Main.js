@@ -25,7 +25,7 @@ export default function Main({ sectionId }) {
             <h3>Duck, NC - Outerbanks</h3>
           </div>
           <div className={classes.bodycentered}>
-            A townhome community in the town of Duck, North Carolina.
+            An oceanside townhome community in the town of Duck, North Carolina.
           </div>
           <div className={classes.bodycentered}>
             <ImageGallery items={images} />
