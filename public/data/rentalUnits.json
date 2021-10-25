@@ -12,12 +12,12 @@
     "webSite": "https://www.brindleybeach.com/georgetown-sands"
   },
   {
-      "id": "3",
-      "name": "Resort Realty",
-      "description": "Find Your Outer Banks Vacation Rental By The Sea",
-      "webSite": "https://www.resortrealty.com/outer-banks/duck/georgetown-sands-condos/?neighborhood_area_id=11447&home_type_id=4616"
+    "id": "3",
+    "name": "Resort Realty",
+    "description": "Find Your Outer Banks Vacation Rental By The Sea",
+    "webSite": "https://www.resortrealty.com/outer-banks/duck/georgetown-sands-condos/?neighborhood_area_id=11447&home_type_id=4616"
   },
-  { 
+  {
     "id": "4",
     "name": "Sun Realty",
     "description": "The Best in Outer Banks Vaction Rentals",

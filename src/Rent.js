@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SECTION_RENT } from "./Constants";
 
 import { useStyles } from "./Styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
+import { LoadRentalUnits } from "./LoadData";
 
-export default function Rent({ sectionId, rentalUnits }) {
+const initialRentalUnits = [
+  {
+    id: 1,
+    name: "",
+    descrpition: "",
+    webSite: ""
+  },
+];
+
+export default function Rent({ sectionId }) {
+  const [isRentDataLoaded, setIsRentDataLoaded] = React.useState(false);
+  const [rentalUnits, setRentalUnits] = React.useState(initialRentalUnits);
+  useEffect(() => {
+    if (!isRentDataLoaded) {
+      LoadRentalUnits(setRentalUnits);
+      setIsRentDataLoaded(true);
+    }
+  }, [isRentDataLoaded]);
+
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -20,7 +39,11 @@ export default function Rent({ sectionId, rentalUnits }) {
               <Card className={classes.heading} variant="outlined">
                 <CardContent>
                   <Typography variant="h6" color="textPrimary">
-                    <a href={rentalUnit.webSite} target="_blank" rel="noreferrer">
+                    <a
+                      href={rentalUnit.webSite}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       {rentalUnit.name}
                     </a>
                   </Typography>
