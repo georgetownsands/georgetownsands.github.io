@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -8,9 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import { alpha, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import Contact from "./Contact";
+import Area from "./Area";
 import Rent from "./Rent";
-import Restaurants from "./Restaurants";
-import Shopping from "./Shopping";
 import Main from "./Main";
 import {
   SECTION_MAIN,
@@ -19,7 +18,6 @@ import {
   SECTION_SHOPPING,
   SECTION_RENT,
 } from "./Constants";
-import { LoadRestaurants, LoadShops } from "./LoadData";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,21 +72,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const initialRestaurants = [
-  {
-    id: 1,
-    name: "",
-  },
-];
-
-const initialShops = [
-  {
-    id: 1,
-    name: "",
-  },
-];
-
-
 var initialMenuSections = [
   { id: SECTION_MAIN, menuName: "Main" },
   { id: SECTION_RENT, menuName: "Rent" },
@@ -103,17 +86,6 @@ export default function Child() {
   const [menuSections] = React.useState(initialMenuSections);
   const [sectionId, setSectionId] = React.useState(0);
   const isMenuOpen = Boolean(anchorEl);
-  const [isDataLoaded, setIsDataLoaded] = React.useState(false);
-  const [restaurants, setRestaurants] = React.useState(initialRestaurants);
-  const [shops, setShops] = React.useState(initialShops);
-
-  useEffect(() => {
-    if (!isDataLoaded) {
-      LoadRestaurants(setRestaurants);
-      setIsDataLoaded(true);
-      LoadShops(setShops);
-    }
-  }, [isDataLoaded]);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -176,11 +148,7 @@ export default function Child() {
       <Main sectionId={sectionId}></Main>
       <Rent sectionId={sectionId} ></Rent>
       <Contact sectionId={sectionId}></Contact>
-      <Restaurants
-        sectionId={sectionId}
-        restaurants={restaurants}
-      ></Restaurants>
-      <Shopping sectionId={sectionId} shops={shops}></Shopping>
+      <Area sectionId={sectionId} searchValue='test'></Area>
     </div>
   );
 }
