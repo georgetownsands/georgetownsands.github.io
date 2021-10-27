@@ -74,6 +74,14 @@
           },
           {
             "id": 1009,
+            "name":"Pizazz Pizza",
+            "description": "Outer Banks Pizza At Its Best",
+            "address": "1187 Duck Rd, Duck, NC 27949",
+            "phoneNumber": "252.252.111",
+            "webSite": "https://pizzazzpizza.net/"
+          },
+          {
+            "id": 1020,
             "name": "Roadside Bar & Grill",
             "description": "Seafood-centric American dining in a quaint renovated house with an upstairs bar & grill.",
             "address": "1193 Duck Rd, Duck, NC 27949",
@@ -81,7 +89,7 @@
             "webSite": "https://duckroadside.com/"
           },
           {
-            "id": 1010,
+            "id": 1090,
             "name": "Treehouse Coffee Co.",
             "description": "Pure coffee love.  Located in Scarborough Faire Shopping Village.",
             "address": "1177 Duck Rd, Duck, NC 27949",
