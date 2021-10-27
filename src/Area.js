@@ -27,8 +27,7 @@ const initialAreaData = [
 
 const includeAreaItem = (areaItem, sectionId, currentSectionId, searchValue) => {
   var result = false;
-  console.log("sectionId: " + sectionId);
-  console.log("currentSectionId: " + currentSectionId);
+  console.log("searchValue: " + searchValue);
   switch (currentSectionId) {
       case MODE_SEARCH:
           if (searchValue && searchValue.trim().length > 2) {
@@ -36,7 +35,7 @@ const includeAreaItem = (areaItem, sectionId, currentSectionId, searchValue) => 
               searchValues.map((value) => result = (result ||
                   (
                       (value.length > 0) &&
-                      ((areaItem.itemName && (areaItem.itemName.toLowerCase().indexOf(value) >= 0)) ||
+                      ((areaItem.name && (areaItem.name.toLowerCase().indexOf(value) >= 0)) ||
                           (areaItem.description && (areaItem.description.toLowerCase().indexOf(value) >= 0)) ||
                           (areaItem.searchWords && (areaItem.searchWords.toLowerCase().indexOf(value) >= 0)))
                   )
@@ -47,7 +46,7 @@ const includeAreaItem = (areaItem, sectionId, currentSectionId, searchValue) => 
           }
           break;  
       default:
-          result = currentSectionId === sectionId;
+          result = true;
   }
   return result;
 };
@@ -64,12 +63,12 @@ export default function Area({ sectionId, searchValue }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {(sectionId === SECTION_RESTAURANTS || sectionId === SECTION_SHOPPING) &&
+      {(sectionId === SECTION_RESTAURANTS || sectionId === SECTION_SHOPPING || sectionId === MODE_SEARCH) &&
         areaData && (
           <div>
             {areaData.map((data) => (
               <div key={data.section}>
-                {data.data.filter(d => includeAreaItem(d, data.section, sectionId, searchValue))
+                {data.data.filter(d => (data.section === sectionId) || (sectionId === MODE_SEARCH))
                 .map((d) => (
                   <div>
                     <Card
@@ -85,7 +84,8 @@ export default function Area({ sectionId, searchValue }) {
                         </Typography>
                       </CardContent>
                     </Card>
-                    {d.detail.map((d2) => (
+                    {d.detail.filter(d2 => includeAreaItem(d2, data.section, sectionId, searchValue))                    
+                    .map((d2) => (
                       <Card key={d2.id}>
                         <CardContent>
                           <Typography

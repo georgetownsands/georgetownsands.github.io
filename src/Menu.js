@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -7,6 +7,9 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { alpha, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
 import Contact from "./Contact";
 import Area from "./Area";
 import Rent from "./Rent";
@@ -17,6 +20,7 @@ import {
   SECTION_RESTAURANTS,
   SECTION_SHOPPING,
   SECTION_RENT,
+  MODE_SEARCH,
 } from "./Constants";
 
 const useStyles = makeStyles((theme) => ({
@@ -77,6 +81,7 @@ var initialMenuSections = [
   { id: SECTION_RENT, menuName: "Rent" },
   { id: SECTION_RESTAURANTS, menuName: "Restaurants" },
   { id: SECTION_SHOPPING, menuName: "Shopping" },
+  { id: MODE_SEARCH, menuName: "Search" },
   { id: SECTION_CONTACT, menuName: "Contact" },
 ];
 
@@ -85,7 +90,23 @@ export default function Child() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [menuSections] = React.useState(initialMenuSections);
   const [sectionId, setSectionId] = React.useState(0);
+  const [searchValue, setSearchValue] = React.useState("");
   const isMenuOpen = Boolean(anchorEl);
+
+  useEffect(() => {
+    switch (sectionId) {
+      case MODE_SEARCH:
+        searchValueRef.focus();
+        break;
+      default:
+        if (menuRef) {
+          menuRef.current.scrollIntoView();
+        }
+    }
+  }, [sectionId]);
+
+  let menuRef = useRef(null);
+  let searchValueRef = useRef(null);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -98,6 +119,10 @@ export default function Child() {
   const onClick = (id) => {
     setSectionId(id);
     setAnchorEl(null);
+  };
+
+  const handleSearchValueChange = (event) => {
+    setSearchValue(event.target.value);
   };
 
   return (
@@ -144,11 +169,31 @@ export default function Child() {
           </div>
         </Toolbar>
       </AppBar>
+      <div ref={menuRef}>
+        {sectionId === MODE_SEARCH && (
+          <Card className={classes.root} variant="outlined">
+            <CardContent>
+              <CardHeader title="Search" />
+              <Typography variant="h5" color="textPrimary">
+                <input
+                  className={classes.inputInput}
+                  type="text"
+                  placeholder="Enter search word(s)..."
+                  onChange={handleSearchValueChange}
+                  ref={(node) => {
+                    searchValueRef = node;
+                  }}
+                />
+              </Typography>
+            </CardContent>
+          </Card>
+        )}
+      </div>
       <div className={classes.root}></div>
       <Main sectionId={sectionId}></Main>
-      <Rent sectionId={sectionId} ></Rent>
+      <Rent sectionId={sectionId}></Rent>
       <Contact sectionId={sectionId}></Contact>
-      <Area sectionId={sectionId} searchValue='test'></Area>
+      <Area sectionId={sectionId} searchValue={searchValue}></Area>
     </div>
   );
 }
