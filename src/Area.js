@@ -71,7 +71,7 @@ export default function Area({ sectionId, searchValue }) {
                 {data.data.filter(d => (data.section === sectionId) || (sectionId === MODE_SEARCH))
                 .map((d) => (
                   <div>
-                    <Card
+                    {(sectionId != MODE_SEARCH && (<Card
                       key={d.id}
                       className={classes.heading}
                       variant="outlined"
@@ -83,11 +83,16 @@ export default function Area({ sectionId, searchValue }) {
                           </a>
                         </Typography>
                       </CardContent>
-                    </Card>
+                    </Card>))}
                     {d.detail.filter(d2 => includeAreaItem(d2, data.section, sectionId, searchValue))                    
                     .map((d2) => (
                       <Card key={d2.id}>
                         <CardContent>
+                        <Typography variant="h6" color="textPrimary">
+                          <a href={d2.webSite} target="_blank" rel="noreferrer">
+                            {d2.name}
+                          </a>
+                        </Typography>
                           <Typography
                             className={classes.heading}
                             color="textPrimary"
