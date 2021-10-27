@@ -71,7 +71,7 @@ export default function Area({ sectionId, searchValue }) {
                 {data.data.filter(d => (data.section === sectionId) || (sectionId === MODE_SEARCH))
                 .map((d) => (
                   <div>
-                    {(sectionId != MODE_SEARCH && (<Card
+                    {(sectionId !== MODE_SEARCH && (<Card
                       key={d.id}
                       className={classes.heading}
                       variant="outlined"
