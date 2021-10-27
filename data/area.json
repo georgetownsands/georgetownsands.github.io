@@ -3,19 +3,20 @@
     "section": 5,
     "data": [
       {
-        "id": "101",
+        "id": 101,
         "name": "Restaurants",
         "detail": [
           {
-            "id": "1001",
+            "id": 1001,
             "name": "AQUA Restaurant",
             "phoneNumber": "252.261.9700",
             "address": "1174 Duck Rd Downstairs, Duck, NC 27949",
             "description": "Waterfront dining in Duck.",
-            "webSite": "https://aquarestaurantobx.com/"
+            "webSite": "https://aquarestaurantobx.com/",
+            "searchWords": "seafood"
           },
           {
-            "id": "1002",
+            "id": 1002,
             "name": "The Blue Point",
             "phoneNumber": "252.261.8090",
             "address": "1240 Duck Road Duck, NC 27949",
@@ -23,7 +24,7 @@
             "webSite": "https://thebluepoint.com"
           },
           {
-            "id": "1003",
+            "id": 1003,
             "name": "Cravings",
             "description": "Casual Dining, Nightlife, Serving Breakfast, Lunch and Dinner",
             "address": "1209 Duck Road Duck, NC 27949",
@@ -31,7 +32,7 @@
             "webSite": "https://cravingsobx.com/"
           },
           {
-            "id": "1004",
+            "id": 1004,
             "name": "Duck Deli",
             "description": "Duck Deli is a small family style restaurant featuring BBQ and much, much more.",
             "address": "1223 Duck Rd, Duck, NC 27949",
@@ -39,7 +40,7 @@
             "webSite": "https://www.duckdeli.com/"
           },
           {
-            "id": "1005",
+            "id": 1005,
             "name": "Duck Pizza",
             "description": "The best craft pizza on the northern Outer Banks",
             "address": "1171 Duck Rd, Scarborough Lane Shoppes, Duck, NC",
@@ -47,7 +48,7 @@
             "webSite": "https://www.duckpizza.com/"
           },
           {
-            "id": "1006",
+            "id": 1006,
             "name": "eventide",
             "address": "1190 Duck Road, Duck, NC 27949",
             "phoneNumber": "252.715.1216",
@@ -55,7 +56,7 @@
             "webSite": "https://www.eventideduck.com/"
           },
           {
-            "id": "1007",
+            "id": 1007,
             "name": "Fishbones Raw Bar & Restaurant",
             "description": "Creative Caribbean style Cuisine combined with fresh local Outer Banks Seafood to complement its upbeat casual dining atmosphere",
             "address": "1171 Duck Rd, Duck, NC 27949",
@@ -63,15 +64,16 @@
             "webSite": "https://www.fishbonesrawbar.com/Home"
           },
           {
-            "id": "1008",
+            "id": 1008,
             "name": "NC Coast Grill & Bar",
             "description": "A Chef-Driven Outer Banks Restaurant Experience",
             "address": "1184 Duck Rd Duck, NC 27949",
             "phoneNumber": "252.261.8666",
-            "webSite": "https://nccoastobx.com/"
+            "webSite": "https://nccoastobx.com/",
+            "searchWords": "seafood"
           },
           {
-            "id": "1009",
+            "id": 1009,
             "name": "Roadside Bar & Grill",
             "description": "Seafood-centric American dining in a quaint renovated house with an upstairs bar & grill.",
             "address": "1193 Duck Rd, Duck, NC 27949",
@@ -79,7 +81,7 @@
             "webSite": "https://duckroadside.com/"
           },
           {
-            "id": "1010",
+            "id": 1010,
             "name": "Treehouse Coffee Co.",
             "description": "Pure coffee love.  Located in Scarborough Faire Shopping Village.",
             "address": "1177 Duck Rd, Duck, NC 27949",
@@ -94,11 +96,11 @@
     "section": 6,
     "data": [
       {
-        "id": "201",
+        "id": 201,
         "name": "Food and Drink",
         "detail": [
           {
-            "id": "2001",
+            "id": 2001,
             "name": "ABC Store",
             "phoneNumber": "252.261.6981",
             "address": "1216 Duck Rd, Duck, NC 27949",
@@ -106,15 +108,16 @@
             "webSite": "https://abc.nc.gov/"
           },
           {
-            "id": "2003",
+            "id": 2003,
             "name": "Dockside N' Duck",
             "phoneNumber": "252.261.8687",
             "address": "1216 Duck Rd, Duck, NC 27949",
             "description": "Excellent fresh seafood market serving Duck since 1987.",
-            "webSite": "http://docksidenduckseafood.com/"
+            "webSite": "http://docksidenduckseafood.com/",
+            "searchWords": "seafood"
           },
           {
-            "id": "2005",
+            "id": 2005,
             "name": "Duck Donuts",
             "description": "warm, delicious, made to order",
             "phoneNumber": "252.262.1406",
@@ -122,7 +125,7 @@
             "webSite": "https://www.duckdonuts.com/duck-nc/"
           },
           {
-            "id": "2010",
+            "id": 2010,
             "name": "Tommy's Natural Foods Market & Wine Shop",
             "phoneNumber": "252.261.8990",
             "address": "1242 Duck Rd, Duck, NC 27949",
@@ -130,7 +133,7 @@
             "webSite": "https://tommysmarketobx.com/"
           },
           {
-            "id": "2015",
+            "id": 2015,
             "name": "Tullio’s Bakery",
             "description": "Featuring Freshly Baked Goods Everyday!",
             "phoneNumber": "252.261.7112",
@@ -138,7 +141,7 @@
             "webSite": "https://www.tulliosbakery.com/"
           },
           {
-            "id": "2021",
+            "id": 2021,
             "name": "Wee Winks Market",
             "phoneNumber": "252.261.2937",
             "address": "1213 Duck Rd, Duck, NC 27949",
@@ -148,11 +151,11 @@
         ]
       },
       {
-        "id": "22",
+        "id": 22,
         "name": "Hardware and home goods",
         "detail": [
           {
-            "id": "3001",
+            "id": 3001,
             "name": "Kellog Supply Company",
             "description": "Hardware and much more.",
             "address": "1201 Duck Rd, Duck, NC 27949",
