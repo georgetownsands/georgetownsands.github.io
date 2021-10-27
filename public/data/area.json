@@ -125,6 +125,14 @@
             "webSite": "https://www.duckdonuts.com/duck-nc/"
           },
           {
+            "id": 2007,
+            "name": "Green Acres Farm Market",
+            "description": "",
+            "address": "1216 Duck Rd, Duck, NC 27949",
+            "searchWords": "fruit vegetable nuts pickles",
+            "webSite": "https://greenacresobx.com/"
+          },
+          {
             "id": 2010,
             "name": "Tommy's Natural Foods Market & Wine Shop",
             "phoneNumber": "252.261.8990",
