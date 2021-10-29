@@ -222,5 +222,38 @@
         ]
       }
     ]
+  },
+  {
+    "section": 8,
+    "data": [
+      {
+        "id": 301,
+        "name": "Park & Boardwalk",
+        "detail": [
+          {
+            "id": 3001,
+            "name": "Duck Town Park & Boardwalk",
+            "description": "Stunning sunsets, natual beauty, soundside activities, amazing music, and family fun.",
+            "address": "1200 Duck Rd, Duck, NC 27949",
+            "phoneNumber": "252.255.1234",
+            "webSite": "https://www.townofduck.com/parks-and-recreation/town-park-boardwalk/"
+          }
+        ]
+      },
+      {
+        "id": 401,
+        "name": "Yoga",
+        "detail": [
+          {
+            "id": 4001,
+            "name": "Yoga on the Green",
+            "description": "Stunning sunsets, natual beauty, soundside activities, amazing music, and family fun.",
+            "address": "1200 Duck Rd, Duck, NC 27949",
+            "phoneNumber": "252.255.1234",
+            "webSite": "https://www.townofduck.com/parks-and-recreation/town-park-boardwalk/"
+          }
+        ]
+      }
+    ]
   }
 ]
