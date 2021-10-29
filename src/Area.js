@@ -63,7 +63,7 @@ export default function Area({ sectionId, searchValue }) {
   return (
     <div className={classes.root}>
       {(sectionId === SECTION_RESTAURANTS || sectionId === SECTION_SHOPPING || 
-      sectionId === SECTION_RENT || sectionId == SECTION_ACTIVITIES || sectionId === MODE_SEARCH) &&
+      sectionId === SECTION_RENT || sectionId === SECTION_ACTIVITIES || sectionId === MODE_SEARCH) &&
         areaData && (
           <div>
             {areaData.map((data) => (

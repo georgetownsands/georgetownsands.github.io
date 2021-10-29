@@ -81,6 +81,7 @@ var initialMenuSections = [
   { id: SECTION_RENT, menuName: "Rent" },
   { id: SECTION_RESTAURANTS, menuName: "Restaurants" },
   { id: SECTION_SHOPPING, menuName: "Shopping" },
+  { id: SECTION_ACTIVITIES, menuName: "Activities" },
   { id: MODE_SEARCH, menuName: "Search" },
   { id: SECTION_CONTACT, menuName: "Contact" },
 ];
