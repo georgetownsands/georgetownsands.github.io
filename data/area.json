@@ -74,7 +74,7 @@
           },
           {
             "id": 1009,
-            "name":"Pizazz Pizza",
+            "name": "Pizazz Pizza",
             "description": "Outer Banks Pizza At Its Best",
             "address": "1187 Duck Rd, Duck, NC 27949",
             "phoneNumber": "252.252.111",
@@ -177,6 +177,47 @@
             "address": "1201 Duck Rd, Duck, NC 27949",
             "phoneNumber": "252.261.8121",
             "webSite": "https://kelloggsupplyco.com/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": 7,
+    "data": [
+      {
+        "id": 401,
+        "name": "Featured Rental Units",
+        "detail": [
+          {
+            "id": 4001,
+            "name": "Favorite Song - Unit 31",
+            "description": "Newly decorated, bright end unit.  $250 rental credit for in-season, full-week rentals.",
+            "webSite": "https://shorelineobx.com/vacation_rentals/gsnd-31-favorite-song-sat-sat/"
+          }
+        ]
+      },
+      {
+        "id": 501,
+        "name": "Rental Agencies",
+        "detail": [
+          {
+            "id": 4002,
+            "name": "Brindley Beach",
+            "description": "The Brindley Beach Difference: Service First... Fun Always",
+            "webSite": "https://www.brindleybeach.com/georgetown-sands"
+          },
+          {
+            "id": 4003,
+            "name": "Resort Realty",
+            "description": "Find Your Outer Banks Vacation Rental By The Sea",
+            "webSite": "https://www.resortrealty.com/outer-banks/duck/georgetown-sands-condos/?neighborhood_area_id=11447&home_type_id=4616"
+          },
+          {
+            "id": 4004,
+            "name": "Sun Realty",
+            "description": "The Best in Outer Banks Vaction Rentals",
+            "webSite": "https://www.sunrealtync.com/georgetown-sands"
           }
         ]
       }
