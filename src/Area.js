@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { SECTION_RESTAURANTS, SECTION_SHOPPING, MODE_SEARCH } from "./Constants";
+import { SECTION_RESTAURANTS, SECTION_SHOPPING, MODE_SEARCH, SECTION_RENT } from "./Constants";
 
 import { useStyles } from "./Styles";
 import Card from "@material-ui/core/Card";
@@ -63,7 +63,8 @@ export default function Area({ sectionId, searchValue }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      {(sectionId === SECTION_RESTAURANTS || sectionId === SECTION_SHOPPING || sectionId === MODE_SEARCH) &&
+      {(sectionId === SECTION_RESTAURANTS || sectionId === SECTION_SHOPPING || 
+      sectionId === SECTION_RENT || sectionId === MODE_SEARCH) &&
         areaData && (
           <div>
             {areaData.map((data) => (

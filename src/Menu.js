@@ -12,7 +12,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardHeader from "@material-ui/core/CardHeader";
 import Contact from "./Contact";
 import Area from "./Area";
-import Rent from "./Rent";
 import Main from "./Main";
 import {
   SECTION_MAIN,
@@ -191,7 +190,6 @@ export default function Child() {
       </div>
       <div className={classes.root}></div>
       <Main sectionId={sectionId}></Main>
-      <Rent sectionId={sectionId}></Rent>
       <Contact sectionId={sectionId}></Contact>
       <Area sectionId={sectionId} searchValue={searchValue}></Area>
     </div>
