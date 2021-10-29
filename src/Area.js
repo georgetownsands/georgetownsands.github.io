@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { SECTION_RESTAURANTS, SECTION_SHOPPING, MODE_SEARCH, SECTION_RENT } from "./Constants";
-
+import { SECTION_RESTAURANTS, SECTION_SHOPPING, MODE_SEARCH, SECTION_RENT, SECTION_ACTIVITIES } from "./Constants";
 import { useStyles } from "./Styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -25,7 +24,7 @@ const initialAreaData = [
   },
 ];
 
-const includeAreaItem = (areaItem, sectionId, currentSectionId, searchValue) => {
+const includeAreaItem = (areaItem, currentSectionId, searchValue) => {
   var result = false;
   console.log("searchValue: " + searchValue);
   switch (currentSectionId) {
@@ -64,7 +63,7 @@ export default function Area({ sectionId, searchValue }) {
   return (
     <div className={classes.root}>
       {(sectionId === SECTION_RESTAURANTS || sectionId === SECTION_SHOPPING || 
-      sectionId === SECTION_RENT || sectionId === MODE_SEARCH) &&
+      sectionId === SECTION_RENT || sectionId == SECTION_ACTIVITIES || sectionId === MODE_SEARCH) &&
         areaData && (
           <div>
             {areaData.map((data) => (
@@ -85,7 +84,7 @@ export default function Area({ sectionId, searchValue }) {
                         </Typography>
                       </CardContent>
                     </Card>))}
-                    {d.detail.filter(d2 => includeAreaItem(d2, data.section, sectionId, searchValue))                    
+                    {d.detail.filter(d2 => includeAreaItem(d2, sectionId, searchValue))                    
                     .map((d2) => (
                       <Card key={d2.id}>
                         <CardContent>
