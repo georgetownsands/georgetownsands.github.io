@@ -227,6 +227,20 @@
     "section": 8,
     "data": [
       {
+        "id": 201,
+        "name": "Bike riding",
+        "detail": [
+          {
+            "id": 2001,
+            "name": "Duck Cycle",
+            "description": "Bike, beach, and watersports rentals - delivery to Corolla, Pine Island, Duck, Southern Shores, Kitty Hawk",
+            "address": "1566 Duck Rd, Duck, NC 27949",
+            "phoneNumber": "252.261.0356",
+            "webSite": "http://duckcycle.com/"
+          }
+        ]
+      },      
+      {
         "id": 301,
         "name": "Park & Boardwalk",
         "detail": [
@@ -246,6 +260,14 @@
         "detail": [
           {
             "id": 4001,
+            "name": "Village Yoga",
+            "description": "Village Yoga is a social entrepreneurship on the Outer Banks that specializes in making yoga available to all levels.",
+            "address": "1240 Duck Rd, Duck, NC 27949",
+            "phoneNumber": "252.564.2219",
+            "webSite": "https://duckvillageyoga.com/"
+          },
+          {
+            "id": 4003,
             "name": "Yoga on the Green",
             "description": "Stunning sunsets, natual beauty, soundside activities, amazing music, and family fun.",
             "address": "1200 Duck Rd, Duck, NC 27949",
