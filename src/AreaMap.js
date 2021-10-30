@@ -23,7 +23,7 @@ export default function AreaMap(areaItem) {
           <IconButton
             aria-label="map"
             onClick={() => {
-              showMap(areaItem, false);
+              showMap(areaItem.areaItem, false);
             }}
           >
             <Map />
@@ -31,7 +31,7 @@ export default function AreaMap(areaItem) {
           <IconButton
             aria-label="directions"
             onClick={() => {
-              showMap(areaItem, true);
+              showMap(areaItem.areaItem, true);
             }}
           >
             <MapOutlined />
