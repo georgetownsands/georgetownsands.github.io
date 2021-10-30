@@ -15,14 +15,14 @@ import AreaMap from "./AreaMap";
 
 const initialAreaData = [
   {
-    section: "1",
+    section: 1,
     data: [
       {
-        id: "1",
+        id: 2,
         name: "Restaurants",
         detail: [
           {
-            id: 1,
+            id: 3,
             name: "",
             phoneNumber: "",
             address: "",
@@ -91,10 +91,10 @@ export default function Area({ sectionId, searchValue }) {
                       data.section === sectionId || sectionId === MODE_SEARCH
                   )
                   .map((d) => (
-                    <div>
+                    <div key={d.id}>
                       {sectionId !== MODE_SEARCH && (
                         <Card
-                          key={d.id}
+                          
                           className={classes.heading}
                           variant="outlined"
                         >
