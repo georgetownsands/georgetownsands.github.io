@@ -9,12 +9,9 @@ import {
 import { useStyles } from "./Styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardActions from "@material-ui/core/CardActions";
 import Typography from "@material-ui/core/Typography";
 import { LoadAreaData } from "./LoadData";
-import IconButton from "@material-ui/core/IconButton";
-import Map from "@material-ui/icons/Map";
-import MapOutlined from "@material-ui/icons/MapOutlined";
+import AreaMap from "./AreaMap";
 
 const initialAreaData = [
   {
@@ -40,7 +37,6 @@ const initialAreaData = [
 
 const includeAreaItem = (areaItem, currentSectionId, searchValue) => {
   var result = false;
-  console.log("searchValue: " + searchValue);
   switch (currentSectionId) {
     case MODE_SEARCH:
       if (searchValue && searchValue.trim().length > 2) {
@@ -66,18 +62,6 @@ const includeAreaItem = (areaItem, currentSectionId, searchValue) => {
       result = true;
   }
   return result;
-};
-
-const showMap = (areaItem, showDirections) => {
-  if (showDirections) {
-    window.open(
-      `https://www.google.com/maps/dir/127 Georgetown Sands Rd, Duck, NC 27949/${areaItem.address}`
-    );
-  } else {
-    window.open(
-      `http://maps.google.com/?q=${areaItem.address}`
-    );
-  }
 };
 
 export default function Area({ sectionId, searchValue }) {
@@ -149,32 +133,13 @@ export default function Area({ sectionId, searchValue }) {
                               >
                                 {d2.description}
                               </Typography>
-                              <Typography>
-                                {d2.address}
-                              </Typography>
+                              <Typography>{d2.address}</Typography>
                               <Typography>
                                 <a href={"tel:" + d2.phoneNumber}>
                                   {d2.phoneNumber}
                                 </a>
                               </Typography>
-                              <CardActions>
-                              <IconButton
-                                  aria-label="map"
-                                  onClick={() => {
-                                    showMap(d2, false);
-                                  }}
-                                >
-                                  <Map />
-                                </IconButton>
-                                <IconButton
-                                  aria-label="directions"
-                                  onClick={() => {
-                                    showMap(d2, true);
-                                  }}
-                                >
-                                  <MapOutlined />
-                                </IconButton>
-                              </CardActions>
+                              <AreaMap areaItem={d2} />
                             </CardContent>
                           </Card>
                         ))}
