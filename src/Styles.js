@@ -19,6 +19,7 @@ export const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    height: '100%'
   },
   body: {
     minWidth: 275,

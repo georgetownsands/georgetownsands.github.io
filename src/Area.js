@@ -8,6 +8,7 @@ import {
 } from "./Constants";
 import { LoadAreaData } from "./LoadData";
 import AreaItemPaper from "./AreaItemPaper";
+import AreaItemHeaderPaper from "./AreaItemHeaderPaper";
 import Grid from "@material-ui/core/Grid";
 
 const initialAreaData = [
@@ -89,7 +90,9 @@ export default function Area({ sectionId, searchValue }) {
                   .map((d) => (
                     <div key={d.id}>
                       {sectionId !== MODE_SEARCH && (
-                        <AreaItemPaper areaItem={d}></AreaItemPaper>
+                        <Grid container spacing={1}>
+                          <AreaItemHeaderPaper areaItem={d}></AreaItemHeaderPaper>
+                        </Grid>
                       )}
                       <Grid container spacing={1}>
                         {d.detail
