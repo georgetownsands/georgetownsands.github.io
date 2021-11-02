@@ -6,12 +6,9 @@ import {
   SECTION_RENT,
   SECTION_ACTIVITIES,
 } from "./Constants";
-import { useStyles } from "./Styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import { LoadAreaData } from "./LoadData";
-import AreaMap from "./AreaMap";
+import AreaItemPaper from "./AreaItemPaper";
+import Grid from "@material-ui/core/Grid";
 
 const initialAreaData = [
   {
@@ -73,9 +70,8 @@ export default function Area({ sectionId, searchValue }) {
       setIsAreaDataLoaded(true);
     }
   }, [isAreaDataLoaded]);
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div>
       {(sectionId === SECTION_RESTAURANTS ||
         sectionId === SECTION_SHOPPING ||
         sectionId === SECTION_RENT ||
@@ -93,56 +89,20 @@ export default function Area({ sectionId, searchValue }) {
                   .map((d) => (
                     <div key={d.id}>
                       {sectionId !== MODE_SEARCH && (
-                        <Card
-                          
-                          className={classes.heading}
-                          variant="outlined"
-                        >
-                          <CardContent>
-                            <Typography variant="h6" color="textPrimary">
-                              <a
-                                href={d.webSite}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {d.name}
-                              </a>
-                            </Typography>
-                          </CardContent>
-                        </Card>
+                        <AreaItemPaper areaItem={d}></AreaItemPaper>
                       )}
-                      {d.detail
-                        .filter((d2) =>
-                          includeAreaItem(d2, sectionId, searchValue)
-                        )
-                        .map((d2) => (
-                          <Card key={d2.id}>
-                            <CardContent>
-                              <Typography variant="h6" color="textPrimary">
-                                <a
-                                  href={d2.webSite}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                >
-                                  {d2.name}
-                                </a>
-                              </Typography>
-                              <Typography
-                                className={classes.heading}
-                                color="textPrimary"
-                              >
-                                {d2.description}
-                              </Typography>
-                              <Typography>{d2.address}</Typography>
-                              <Typography>
-                                <a href={"tel:" + d2.phoneNumber}>
-                                  {d2.phoneNumber}
-                                </a>
-                              </Typography>
-                              <AreaMap areaItem={d2} />
-                            </CardContent>
-                          </Card>
-                        ))}
+                      <Grid container spacing={1}>
+                        {d.detail
+                          .filter((d2) =>
+                            includeAreaItem(d2, sectionId, searchValue)
+                          )
+                          .map((d2) => (
+                            <AreaItemPaper
+                              key={d2.id}
+                              areaItem={d2}
+                            ></AreaItemPaper>
+                          ))}
+                      </Grid>
                     </div>
                   ))}
               </div>
