@@ -81,6 +81,14 @@
               "webSite": "https://pizzazzpizza.net/"
             },
             {
+              "id": 510,
+              "name": "Red Sky Cafe",
+              "description": "For more than 15 years, Red Sky Cafe restaurant in Duck, NC, has been delighting locals and visitors with fresh, creative meals that highlight local Outer Banks seafood, poultry, beef, duck and more. ",
+              "address": "1197 Duck Rd, Duck, NC 27949",
+              "phoneNumber": "252.261.8646",
+              "webSite": "https://redskycafe.com/"
+            },
+            {
               "id": 520,
               "name": "Roadside Bar & Grill",
               "description": "Seafood-centric American dining in a quaint renovated house with an upstairs bar & grill.",
@@ -237,6 +245,14 @@
               "address": "1566 Duck Rd, Duck, NC 27949",
               "phoneNumber": "252.261.0356",
               "webSite": "http://duckcycle.com/"
+            },
+            {
+              "id": 810,
+              "name": "Duck Village Outfitters",
+              "description": "Bikes, surfboards, kayaks, beach equipment, and more",
+              "address": "1207 Duck Rd, Duck, NC 27949",
+              "phoneNumber": "252.261.7222",
+              "webSite": "http://www.mydvo.com/"
             }
           ]
         },
