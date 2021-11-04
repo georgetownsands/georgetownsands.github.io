@@ -193,6 +193,14 @@
               "address": "1201 Duck Rd, Duck, NC 27949",
               "phoneNumber": "252.261.8121",
               "webSite": "https://kelloggsupplyco.com/"
+            },
+            {
+              "id": 632,
+              "name": "Nags Head Hammocks",
+              "description": "If it's got the Nags Head Hammocks name on it, then rest assured, we handcrafted it ourselves, right here at our weaving workshop in our beloved home state of North Carolina. Just as we always have. Just as we always will.",
+              "address": "1212 Duck Rd, Duck, NC 27949",
+              "phoneNumber": "252.295.0405",
+              "webSite": "https://nagsheadhammocks.com/"
             }
           ]
         }
