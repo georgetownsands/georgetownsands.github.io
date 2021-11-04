@@ -20,11 +20,19 @@
               "name": "The Blue Point",
               "phoneNumber": "252.261.8090",
               "address": "1240 Duck Road Duck, NC 27949",
-              "description": "Mellow spot for locally sourced, high-end seafood & Southern fare, with occasional live music.",
+              "description": "Mellow  for locally sourced, high-end seafood & Southern fare, with occasional live music.",
               "webSite": "https://thebluepoint.com"
             },
             {
               "id": 503,
+              "name": "Coastal Cantina",
+              "phoneNumber": "252.480.0024",
+              "address": "1236 Duck Rd, Duck, NC 27949",
+              "description": "Great Sound Front Tex Mex Restaurant, serving Ice Cold Draft Beer ,Fish Tacos, Quesadillas and Duck or Crab Mexican Pizza",
+              "webSite": "https://coastalcantina.com/"
+            },
+            {
+              "id": 505,
               "name": "Cravings",
               "description": "Casual Dining, Nightlife, Serving Breakfast, Lunch and Dinner",
               "address": "1209 Duck Road Duck, NC 27949",
@@ -32,7 +40,7 @@
               "webSite": "https://cravingsobx.com/"
             },
             {
-              "id": 504,
+              "id": 506,
               "name": "Duck Deli",
               "description": "Duck Deli is a small family style restaurant featuring BBQ and much, much more.",
               "address": "1223 Duck Rd, Duck, NC 27949",
@@ -40,7 +48,7 @@
               "webSite": "https://www.duckdeli.com/"
             },
             {
-              "id": 505,
+              "id": 507,
               "name": "Duck Pizza",
               "description": "The best craft pizza on the northern Outer Banks",
               "address": "1171 Duck Rd, Scarborough Lane Shoppes, Duck, NC",
@@ -48,7 +56,7 @@
               "webSite": "https://www.duckpizza.com/"
             },
             {
-              "id": 506,
+              "id": 508,
               "name": "eventide",
               "address": "1190 Duck Road, Duck, NC 27949",
               "phoneNumber": "252.715.1216",
@@ -56,7 +64,7 @@
               "webSite": "https://www.eventideduck.com/"
             },
             {
-              "id": 507,
+              "id": 509,
               "name": "Fishbones Raw Bar & Restaurant",
               "description": "Creative Caribbean style Cuisine combined with fresh local Outer Banks Seafood to complement its upbeat casual dining atmosphere",
               "address": "1171 Duck Rd, Duck, NC 27949",
@@ -64,7 +72,7 @@
               "webSite": "https://www.fishbonesrawbar.com/Home"
             },
             {
-              "id": 508,
+              "id": 510,
               "name": "NC Coast Grill & Bar",
               "description": "A Chef-Driven Outer Banks Restaurant Experience",
               "address": "1184 Duck Rd Duck, NC 27949",
@@ -73,7 +81,7 @@
               "searchWords": "seafood"
             },
             {
-              "id": 509,
+              "id": 511,
               "name": "Pizazz Pizza",
               "description": "Outer Banks Pizza At Its Best",
               "address": "1187 Duck Rd, Duck, NC 27949",
@@ -81,7 +89,7 @@
               "webSite": "https://pizzazzpizza.net/"
             },
             {
-              "id": 510,
+              "id": 512,
               "name": "Red Sky Cafe",
               "description": "For more than 15 years, Red Sky Cafe restaurant in Duck, NC, has been delighting locals and visitors with fresh, creative meals that highlight local Outer Banks seafood, poultry, beef, duck and more. ",
               "address": "1197 Duck Rd, Duck, NC 27949",
@@ -289,6 +297,21 @@
               "phoneNumber": "252.255.1234",
               "webSite": "https://www.townofduck.com/parks-and-recreation/town-park-boardwalk/"
             }
+          ]
+        },
+        {
+          "id": 88,
+          "name": "Water Sports",
+          "detail": [
+            {
+              "id": 881,
+              "name": "Kitty Hawk Kites",
+              "description": "Hang gliding, parasailing, jet ski rentals, boat tours, and more",
+              "address": "1226 Duck Rd, Duck, NC 27949",
+              "phoneNumber": "252.261.4450",
+              "webSite": "https://www.kittyhawk.com/location/duck-kitty-hawk-kites/"
+            }
+          ]
           ]
         },
         {
