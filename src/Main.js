@@ -19,21 +19,15 @@ export default function Main({ sectionId }) {
     <div className={classes.root}>
       {sectionId === SECTION_MAIN && (
         <div>
-          <div className={classes.bodycentered}>
-            An oceanside townhome community
-          </div>
-          <div className={classes.bodycentered}>
-            located in the town of Duck, North Carolina - Outerbanks
-          </div>
           <Paper className={classes.paper}>
-            <ImageGallery className={classes.media} items={images} />
-          </Paper>
-          <Paper className={classes.paper}>
-            Georgetown Sands townhomes are located at the edge of the town of
+            Georgetown Sands is an oceanside townhome community located at the edge of the town of
             Duck, NC within walking distance of great restaurants, shopping,
             Atlantic Ocean beach and Currituck Sound access. Relax and enjoy a
             variety of activities including walking, running, tennis,
             watersports, and memorable sunrises and sunsets.
+          </Paper>
+          <Paper className={classes.paper}>
+            <ImageGallery className={classes.media} items={images} />
           </Paper>
           <Paper className={classes.paper}>
             Ammenities include:
