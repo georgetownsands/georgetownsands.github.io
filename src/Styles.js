@@ -12,14 +12,14 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     color: theme.palette.text.primary,
     marginLeft: 10,
-    marginRight: 10
+    marginRight: 10,
   },
   paper: {
     margin: theme.spacing(1),
     padding: theme.spacing(1),
     textAlign: "center",
     color: theme.palette.text.secondary,
-    height: '100%'
+    height: "100%",
   },
   body: {
     minWidth: 275,
@@ -46,6 +46,9 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: 12,
   },
   img: {
-    border: "3px solid #555"
-  }
+    border: "3px solid #555",
+  },
+  media: {
+    width: "50%",
+  },
 }));

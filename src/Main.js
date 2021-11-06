@@ -2,16 +2,17 @@ import React from "react";
 import { SECTION_MAIN } from "./Constants";
 
 import { useStyles } from "./Styles";
-import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/css/image-gallery.css';
+import ImageGallery from "react-image-gallery";
+import Paper from "@material-ui/core/Paper";
+import "react-image-gallery/styles/css/image-gallery.css";
 export default function Main({ sectionId }) {
   const classes = useStyles();
   const images = [
     {
-      original: '/images/georgetownsands.jpeg',
+      original: "/images/georgetownsands.jpeg",
     },
     {
-      original: '/images/GeorgetownSandsBeach.jpg',
+      original: "/images/GeorgetownSandsBeach.jpg",
     },
   ];
   return (
@@ -19,25 +20,31 @@ export default function Main({ sectionId }) {
       {sectionId === SECTION_MAIN && (
         <div>
           <div className={classes.root}>
-            <h3>Georgetown Sands Townhomes</h3>
-          </div>
-          <div className={classes.root}>
-            <h3>Duck, NC - Outerbanks</h3>
+            <h3>Georgetown Sands</h3>
           </div>
           <div className={classes.bodycentered}>
-            An oceanside townhome community in the town of Duck, North Carolina.
+            An oceanside townhome community
           </div>
           <div className={classes.bodycentered}>
-            <ImageGallery items={images} />
+            located in the town of Duck, North Carolina - Outerbanks
           </div>
-          <div className={classes.bodycentered}>
-            <ul>
-              <li>community pool</li>
-              <li>tennis courts</li>
-              <li>convenient beach access</li>
-              <li>walking distance from Duck restaurants and shopping</li>
-            </ul>
-          </div>
+          <Paper className={classes.paper}>
+            <ImageGallery className={classes.media} items={images} />
+          </Paper>
+          <Paper className={classes.paper}>
+            Georgetown Sands townhomes are located at the edge of the town of
+            Duck, NC within walking distance of great restaurants, shopping,
+            Atlantic Ocean beach and Currituck Sound access. Relax and enjoy a
+            variety of activities including walking, running, tennis,
+            watersports, and memorable sunrises and sunsets.
+          </Paper>
+          <Paper className={classes.paper}>
+            Georgetown Sands ammenities include:
+            <div>community pool</div>
+            <div>tennis courts</div>
+            <div>convenient beach access</div>
+            <div>walking distance from Duck restaurants and shopping</div>
+          </Paper>
         </div>
       )}
     </div>
