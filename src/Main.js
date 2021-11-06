@@ -19,9 +19,6 @@ export default function Main({ sectionId }) {
     <div className={classes.root}>
       {sectionId === SECTION_MAIN && (
         <div>
-          <div className={classes.root}>
-            <h3>Georgetown Sands</h3>
-          </div>
           <div className={classes.bodycentered}>
             An oceanside townhome community
           </div>
@@ -43,7 +40,7 @@ export default function Main({ sectionId }) {
             <div>community pool</div>
             <div>tennis courts</div>
             <div>convenient beach access</div>
-            <div>walking distance from Duck restaurants, shopping and much more</div>
+            <div>walking distance from Duck restaurants, shopping and much  more</div>
           </Paper>
         </div>
       )}
