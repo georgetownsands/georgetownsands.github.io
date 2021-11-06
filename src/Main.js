@@ -39,11 +39,11 @@ export default function Main({ sectionId }) {
             watersports, and memorable sunrises and sunsets.
           </Paper>
           <Paper className={classes.paper}>
-            Georgetown Sands ammenities include:
+            Ammenities include:
             <div>community pool</div>
             <div>tennis courts</div>
             <div>convenient beach access</div>
-            <div>walking distance from Duck restaurants and shopping</div>
+            <div>walking distance from Duck restaurants, shopping and much more</div>
           </Paper>
         </div>
       )}
