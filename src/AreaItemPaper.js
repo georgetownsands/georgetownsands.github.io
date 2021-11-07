@@ -9,7 +9,7 @@ export default function AreaItemPaper(areaItem) {
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={6} md={3}>
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} elevation={3}>
         <Box p={1}>
           <Typography variant="h6" color="textPrimary">
             <a
