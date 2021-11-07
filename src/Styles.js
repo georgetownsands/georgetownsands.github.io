@@ -1,4 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
+import grey from "@material-ui/core/colors/grey";
+
 
 export const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +22,9 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
     height: "100%",
+  },
+  grayPaper: {
+    backgroundColor: grey[200]
   },
   body: {
     minWidth: 275,
