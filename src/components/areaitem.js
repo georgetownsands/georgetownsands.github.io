@@ -1,9 +1,19 @@
-import * as React from "react"
+import * as React from "react";
 
-export default function AreaItem({ name, description, address, phoneNumber, webSite }) {
+export default function AreaItem({
+  name,
+  description,
+  address,
+  phoneNumber,
+  webSite,
+}) {
   return (
     <li>
-      <span className="name"><a href={webSite} target="_blank">{name}</a></span>
+      <span className="name">
+        <a href={webSite} target="_blank">
+          {name}
+        </a>
+      </span>
       <div>
         <span classNmae="description">{description}</span>
       </div>
@@ -11,8 +21,10 @@ export default function AreaItem({ name, description, address, phoneNumber, webS
         <span classNmae="address">{address}</span>
       </div>
       <div>
-        <span classNmae="phoneNumber">{phoneNumber}</span>
+        <span classNmae="phoneNumber">
+          <a href={"tel:" + phoneNumber}>{phoneNumber}</a>
+        </span>
       </div>
     </li>
-  )
+  );
 }
