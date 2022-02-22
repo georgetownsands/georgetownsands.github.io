@@ -166,6 +166,14 @@ export default [
             webSite: "https://greenacresobx.com/",
           },
           {
+            id: 608,
+            name: "Growlers to Go",
+            description: "Featuring NC and VA craft beer",
+            address: "1187 Duck Rd, Duck, NC 27949",
+            searchWords: "beer",
+            webSite: "https://www.craftbeerobx.com/",
+          },
+          {
             id: 610,
             name: "Tommy's Natural Foods Market & Wine Shop",
             phoneNumber: "252.261.8990",
@@ -391,4 +399,4 @@ export default [
       },
     ],
   },
-]
+];
