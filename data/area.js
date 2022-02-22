@@ -170,6 +170,7 @@ export default [
             name: "Growlers to Go",
             description: "Featuring NC and VA craft beer",
             address: "1187 Duck Rd, Duck, NC 27949",
+            phoneNumber: "252.715.1946",
             searchWords: "beer",
             webSite: "https://www.craftbeerobx.com/",
           },
