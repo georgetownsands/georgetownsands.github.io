@@ -16,7 +16,12 @@ const initialDataJson = JSON.stringify(allPlaces);
 const communityJson = JSON.stringify(COMMUNITY_INFO);
 ---
 
-<div class="bg-white rounded-3xl border border-slate-200 shadow-md overflow-hidden flex flex-col h-[750px] lg:h-[800px] relative">
+<div
+  id="duck-map-wrapper"
+  data-places={initialDataJson}
+  data-community={communityJson}
+  class="bg-white rounded-3xl border border-slate-200 shadow-md overflow-hidden flex flex-col h-[750px] lg:h-[800px] relative"
+>
   <!-- Map Header Bar with Search & Filters -->
   <div class="p-4 sm:p-5 border-b border-slate-200 bg-slate-50/90 backdrop-blur-xs z-10 shrink-0">
     <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
@@ -78,12 +83,12 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
   </div>
 
   <!-- Map + Sidebar Grid Container -->
-  <div class="flex-grow flex flex-col lg:flex-row relative overflow-hidden">
+  <div class="flex-grow flex flex-col lg:flex-row relative overflow-hidden min-h-0">
     <!-- Leaflet Map Canvas -->
-    <div id="duck-map" class="flex-grow w-full h-[400px] lg:h-full z-0"></div>
+    <div id="duck-map" class="w-full lg:flex-1 h-[420px] lg:h-full min-h-[380px] z-0" style="min-height: 380px; height: 100%;"></div>
 
     <!-- Sync'd Places Drawer / Sidebar -->
-    <div class="w-full lg:w-96 bg-white border-t lg:border-t-0 lg:border-l border-slate-200 flex flex-col h-[350px] lg:h-full shrink-0 z-10">
+    <div class="w-full lg:w-96 bg-white border-t lg:border-t-0 lg:border-l border-slate-200 flex flex-col h-[330px] lg:h-full shrink-0 z-10 min-h-0">
       <div class="p-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between text-xs font-semibold text-slate-700">
         <span>Places in Duck, NC</span>
         <span id="places-count" class="text-ocean-700 font-bold">{allPlaces.length} locations</span>
@@ -95,82 +100,93 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
   </div>
 </div>
 
-<!-- Load Leaflet Assets -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  import L from 'leaflet';
+  import 'leaflet/dist/leaflet.css';
 
-<script define:vars={{ initialDataJson, communityJson }}>
-  const places = JSON.parse(initialDataJson);
-  const community = JSON.parse(communityJson);
+  function initInteractiveMap() {
+    const wrapper = document.getElementById('duck-map-wrapper');
+    const mapElement = document.getElementById('duck-map');
+    if (!wrapper || !mapElement) return;
 
-  // Haversine formula to compute miles from Georgetown Sands
-  function getDistanceMiles(lat1, lon1, lat2, lon2) {
-    const R = 3958.8; // Radius of Earth in miles
-    const dLat = (lat2 - lat1) * Math.PI / 180;
-    const dLon = (lon2 - lon1) * Math.PI / 180;
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-      Math.sin(dLon / 2) * Math.sin(dLon / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return (R * c).toFixed(1);
-  }
+    // Check if map already initialized on this element
+    if ((mapElement as any)._leaflet_id) {
+      return;
+    }
 
-  // Pin Icons Generator
-  function createCustomIcon(color, emoji) {
-    return L.divIcon({
-      className: 'custom-map-marker',
-      html: `
-        <div style="
-          background-color: ${color};
-          width: 32px;
-          height: 32px;
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(-45deg);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border: 2px solid white;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-          cursor: pointer;
-        ">
-          <span style="transform: rotate(45deg); font-size: 14px;">${emoji}</span>
-        </div>
-      `,
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32],
-    });
-  }
+    const places = JSON.parse(wrapper.getAttribute('data-places') || '[]');
+    const community = JSON.parse(wrapper.getAttribute('data-community') || '{}');
 
-  const icons = {
-    community: createCustomIcon('#f59e0b', '⭐'),
-    restaurant: createCustomIcon('#e11d48', '🍽️'),
-    shopping: createCustomIcon('#059669', '🛍️'),
-    activity: createCustomIcon('#0284c7', '🏄'),
-  };
+    // Haversine distance formula in miles
+    function getDistanceMiles(lat1: number, lon1: number, lat2: number, lon2: number) {
+      const R = 3958.8;
+      const dLat = ((lat2 - lat1) * Math.PI) / 180;
+      const dLon = ((lon2 - lon1) * Math.PI) / 180;
+      const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos((lat1 * Math.PI) / 180) *
+          Math.cos((lat2 * Math.PI) / 180) *
+          Math.sin(dLon / 2) *
+          Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return (R * c).toFixed(1);
+    }
 
-  // Wait for DOM & Leaflet
-  window.addEventListener('DOMContentLoaded', () => {
-    if (typeof L === 'undefined') return;
+    // Pin Icons Generator
+    function createCustomIcon(color: string, emoji: string) {
+      return L.divIcon({
+        className: 'custom-map-marker',
+        html: `
+          <div style="
+            background-color: ${color};
+            width: 32px;
+            height: 32px;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            cursor: pointer;
+          ">
+            <span style="transform: rotate(45deg); font-size: 14px;">${emoji}</span>
+          </div>
+        `,
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+      });
+    }
 
-    // Georgetown Sands coordinates
+    const icons: Record<string, L.DivIcon> = {
+      community: createCustomIcon('#f59e0b', '⭐'),
+      restaurant: createCustomIcon('#e11d48', '🍽️'),
+      shopping: createCustomIcon('#059669', '🛍️'),
+      activity: createCustomIcon('#0284c7', '🏄'),
+    };
+
     const gsCoords = community.coordinates || { lat: 36.1618, lng: -75.7495 };
 
     // Initialize Map
-    const map = L.map('duck-map', {
+    const map = L.map(mapElement, {
       center: [36.166, -75.753],
       zoom: 14,
       scrollWheelZoom: true,
     });
 
-    // Add OpenStreetMap Tile Layer
+    // Add Tile Layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    // Add Georgetown Sands Pin
+    // Invalidate size once rendered
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 200);
+
+    // Add Georgetown Sands Home Base Pin
     const gsMarker = L.marker([gsCoords.lat, gsCoords.lng], { icon: icons.community }).addTo(map);
     gsMarker.bindPopup(`
       <div style="font-family: inherit; font-size: 13px; line-height: 1.4; padding: 2px;">
@@ -181,12 +197,12 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       </div>
     `);
 
-    // Markers state
+    // State
     let activeFilter = 'all';
     let searchQuery = '';
-    const markersMap = new Map();
+    const markersMap = new Map<string, { place: any; marker: L.Marker; dist: string }>();
 
-    // Check URL parameters for preset category (e.g. /map?category=restaurants)
+    // URL parameter support
     const urlParams = new URLSearchParams(window.location.search);
     const paramCat = urlParams.get('category');
     if (paramCat) {
@@ -195,8 +211,8 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       else if (paramCat.startsWith('act')) activeFilter = 'activity';
     }
 
-    // Create markers for all places
-    places.forEach((p) => {
+    // Populate markers
+    places.forEach((p: any) => {
       if (!p.coordinates) return;
 
       const dist = getDistanceMiles(gsCoords.lat, gsCoords.lng, p.coordinates.lat, p.coordinates.lng);
@@ -233,22 +249,22 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
     const listContainer = document.getElementById('places-list');
     const countEl = document.getElementById('places-count');
     const filterBtns = document.querySelectorAll('.map-filter-btn');
-    const searchInput = document.getElementById('map-search');
+    const searchInput = document.getElementById('map-search') as HTMLInputElement | null;
     const centerGsBtn = document.getElementById('btn-center-georgetown');
 
-    // Update active filter button styling
     function updateButtonStyles() {
       filterBtns.forEach((btn) => {
         const filter = btn.getAttribute('data-filter');
         if (filter === activeFilter) {
-          btn.className = 'map-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer bg-slate-900 text-white';
+          btn.className =
+            'map-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer bg-slate-900 text-white';
         } else {
-          btn.className = 'map-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer bg-white text-slate-700 hover:bg-slate-100 border border-slate-200';
+          btn.className =
+            'map-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer bg-white text-slate-700 hover:bg-slate-100 border border-slate-200';
         }
       });
     }
 
-    // Refresh Visible Markers & Places List
     function refreshMapAndList() {
       if (!listContainer) return;
       listContainer.innerHTML = '';
@@ -266,9 +282,9 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
           if (!map.hasLayer(marker)) map.addLayer(marker);
           visibleCount++;
 
-          // Create list item card
           const card = document.createElement('div');
-          card.className = 'p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer border border-transparent hover:border-slate-200 transition-all text-left';
+          card.className =
+            'p-2.5 rounded-xl hover:bg-slate-50 cursor-pointer border border-transparent hover:border-slate-200 transition-all text-left';
           card.innerHTML = `
             <div class="flex items-start justify-between gap-1 mb-1">
               <span class="font-bold text-xs text-slate-900 hover:text-ocean-700">${place.name}</span>
@@ -296,7 +312,6 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       updateButtonStyles();
     }
 
-    // Filter button clicks
     filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         activeFilter = btn.getAttribute('data-filter') || 'all';
@@ -304,15 +319,13 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       });
     });
 
-    // Search input
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim().toLowerCase();
+        searchQuery = (e.target as HTMLInputElement).value.trim().toLowerCase();
         refreshMapAndList();
       });
     }
 
-    // Center on Georgetown Sands button
     if (centerGsBtn) {
       centerGsBtn.addEventListener('click', () => {
         map.flyTo([gsCoords.lat, gsCoords.lng], 15, { duration: 1 });
@@ -320,9 +333,15 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       });
     }
 
-    // Initial render
     refreshMapAndList();
-  });
+  }
+
+  // Run on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initInteractiveMap);
+  } else {
+    initInteractiveMap();
+  }
 </script>
 
 <style>
@@ -338,4 +357,3 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
     transform: scale(1.15) !important;
   }
 </style>
-
