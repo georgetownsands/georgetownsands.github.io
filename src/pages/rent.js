@@ -9,8 +9,7 @@ const Rent = () => (
     <h2>Rent</h2>
     <p>Many townhomes are available for rent.</p>
     <h3>Featured units</h3>
-    <p>
-        <a href="https://www.byowner.com/vacation-rentals-details/townhome/gsnd-31-favorite-song-sat-sat-633129" target="_blank">Favorite Song - Unit 31</a>
+    <p>None at this time
     </p>
     <h3>Rental Agencies</h3>
     <p>
