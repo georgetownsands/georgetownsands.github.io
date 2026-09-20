@@ -137,7 +137,7 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       return L.divIcon({
         className: 'custom-map-marker',
         html: `
-          <div style="
+          <div class="marker-pin" style="
             background-color: ${color};
             width: 32px;
             height: 32px;
@@ -149,8 +149,10 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
             border: 2px solid white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             cursor: pointer;
+            transition: transform 0.15s ease-in-out;
+            pointer-events: auto;
           ">
-            <span style="transform: rotate(45deg); font-size: 14px;">${emoji}</span>
+            <span style="transform: rotate(45deg); font-size: 14px; pointer-events: none;">${emoji}</span>
           </div>
         `,
         iconSize: [32, 32],
@@ -168,12 +170,13 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
 
     const gsCoords = community.coordinates || { lat: 36.1618, lng: -75.7495 };
 
-    // Initialize Map
+    // Initialize Map (disable legacy emulated tap to avoid touch glitches)
     const map = L.map(mapElement, {
       center: [36.166, -75.753],
       zoom: 14,
       scrollWheelZoom: true,
-    });
+      tap: false,
+    } as any);
 
     // Add Tile Layer
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -187,15 +190,40 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
     }, 200);
 
     // Add Georgetown Sands Home Base Pin
+    const gsGoogleUrl = `https://www.google.com/maps/dir/?api=1&destination=${gsCoords.lat},${gsCoords.lng}`;
+    const gsAppleUrl = `https://maps.apple.com/?daddr=${gsCoords.lat},${gsCoords.lng}&q=Georgetown+Sands`;
+    const gsWazeUrl = `https://waze.com/ul?ll=${gsCoords.lat},${gsCoords.lng}&navigate=yes`;
+
     const gsMarker = L.marker([gsCoords.lat, gsCoords.lng], { icon: icons.community }).addTo(map);
     gsMarker.bindPopup(`
-      <div style="font-family: inherit; font-size: 13px; line-height: 1.4; padding: 2px;">
+      <div style="font-family: inherit; font-size: 13px; line-height: 1.4; width: 260px; max-width: 100%;">
         <span style="display: inline-block; background: #fef3c7; color: #92400e; font-weight: bold; font-size: 10px; padding: 2px 6px; border-radius: 9999px; margin-bottom: 4px;">YOUR HOME BASE</span>
         <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 4px 0; color: #0f172a;">Georgetown Sands</h4>
         <p style="margin: 0 0 6px 0; color: #475569; font-size: 11px;">Oceanside townhome community with direct beach access, pool, and tennis courts on the Duck Trail.</p>
-        <div style="font-weight: 600; color: #0284c7; font-size: 11px;">Duck Road, Duck, NC 27949</div>
+        <div style="font-weight: 600; color: #0284c7; font-size: 11px; margin-bottom: 6px;">📍 Duck Road, Duck, NC 27949</div>
+
+        <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e8f0;">
+          <div style="font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px;">
+            Get Directions:
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;">
+            <a href="${gsGoogleUrl}" target="_blank" rel="noopener noreferrer" class="nav-direction-btn" title="Directions via Google Maps">
+              <span>Google</span>
+            </a>
+            <a href="${gsAppleUrl}" target="_blank" rel="noopener noreferrer" class="nav-direction-btn" title="Directions via Apple Maps">
+              <span>Apple</span>
+            </a>
+            <a href="${gsWazeUrl}" target="_blank" rel="noopener noreferrer" class="nav-direction-btn" title="Directions via Waze">
+              <span>Waze</span>
+            </a>
+          </div>
+        </div>
       </div>
-    `);
+    `, {
+      autoPan: true,
+      autoPanPadding: [30, 30],
+      maxWidth: 300,
+    });
 
     // State
     let activeFilter = 'all';
@@ -219,30 +247,55 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       const icon = icons[p.type] || icons.restaurant;
       const marker = L.marker([p.coordinates.lat, p.coordinates.lng], { icon });
 
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.name}, ${p.address || 'Duck, NC'}`)}`;
+      const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${p.coordinates.lat},${p.coordinates.lng}`;
+      const appleMapsUrl = `https://maps.apple.com/?daddr=${p.coordinates.lat},${p.coordinates.lng}&q=${encodeURIComponent(p.name)}`;
+      const wazeUrl = `https://waze.com/ul?ll=${p.coordinates.lat},${p.coordinates.lng}&navigate=yes`;
 
       const popupHtml = `
-        <div style="font-family: inherit; font-size: 13px; line-height: 1.4; max-width: 250px;">
+        <div style="font-family: inherit; font-size: 13px; line-height: 1.4; width: 260px; max-width: 100%;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
             <span style="background: #e0f2fe; color: #0369a1; font-weight: 600; font-size: 10px; padding: 1px 6px; border-radius: 9999px;">
               ${p.category}
             </span>
             <span style="font-size: 10px; color: #64748b; font-weight: 500;">
-              ${dist} mi from Georgetown Sands
+              ${dist} mi from GS
             </span>
           </div>
-          <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 4px 0; color: #0f172a;">${p.name}</h4>
-          <p style="margin: 0 0 8px 0; color: #475569; font-size: 11px; max-height: 80px; overflow-y: auto;">${p.description}</p>
+          <h4 style="font-size: 15px; font-weight: bold; margin: 0 0 4px 0; color: #0f172a; line-height: 1.2;">${p.name}</h4>
+          <p style="margin: 0 0 6px 0; color: #475569; font-size: 11px; max-height: 75px; overflow-y: auto;">${p.description}</p>
           ${p.address ? `<div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">📍 ${p.address}</div>` : ''}
-          <div style="display: flex; gap: 8px; margin-top: 8px; padding-top: 6px; border-top: 1px solid #e2e8f0; font-size: 11px; font-weight: bold;">
-            ${p.phoneNumber ? `<a href="tel:${p.phoneNumber.replace(/[^0-9]/g, '')}" style="color: #0284c7; text-decoration: none;">📞 Call</a>` : ''}
-            <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none;">🗺️ Directions</a>
-            ${p.webSite ? `<a href="${p.webSite}" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none; margin-left: auto;">🌐 Site &rarr;</a>` : ''}
+
+          <!-- Directions App Group -->
+          <div style="margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e8f0;">
+            <div style="font-size: 10px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px;">
+              Get Directions:
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;">
+              <a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="nav-direction-btn" title="Open Google Maps">
+                <span>Google</span>
+              </a>
+              <a href="${appleMapsUrl}" target="_blank" rel="noopener noreferrer" class="nav-direction-btn" title="Open Apple Maps">
+                <span>Apple</span>
+              </a>
+              <a href="${wazeUrl}" target="_blank" rel="noopener noreferrer" class="nav-direction-btn" title="Open Waze">
+                <span>Waze</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact & Website Links -->
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 6px; border-top: 1px solid #f1f5f9; font-size: 11px; font-weight: 600;">
+            ${p.phoneNumber ? `<a href="tel:${p.phoneNumber.replace(/[^0-9]/g, '')}" style="color: #0284c7; text-decoration: none;">📞 ${p.phoneNumber}</a>` : '<span></span>'}
+            ${p.webSite ? `<a href="${p.webSite}" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none; margin-left: auto;">Website &rarr;</a>` : ''}
           </div>
         </div>
       `;
 
-      marker.bindPopup(popupHtml);
+      marker.bindPopup(popupHtml, {
+        autoPan: true,
+        autoPanPadding: [30, 30],
+        maxWidth: 300,
+      });
       markersMap.set(p.id, { place: p, marker, dist });
     });
 
@@ -351,9 +404,31 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
     padding: 6px;
   }
   :global(.custom-map-marker) {
-    transition: transform 0.2s ease-in-out;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
   }
-  :global(.custom-map-marker:hover) {
-    transform: scale(1.15) !important;
+  :global(.custom-map-marker:hover .marker-pin) {
+    transform: rotate(-45deg) scale(1.18) !important;
+  }
+  :global(.nav-direction-btn) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px 4px;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #1e293b;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+  :global(.nav-direction-btn:hover) {
+    background-color: #e2e8f0;
+    border-color: #94a3b8;
   }
 </style>
