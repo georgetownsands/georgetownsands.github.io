@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FilterableDirectory from '../components/FilterableDirectory.astro';
+import { ACTIVITIES } from '../data/area';
+---
+
+<Layout
+  title="Duck, NC Activities, Parks & Watersports | Georgetown Sands"
+  description="Discover things to do in Duck, NC: Duck Town Park & Boardwalk, watersports on Currituck Sound, bike rentals on the Duck Trail, Corolla wild horse tours, and yoga."
+>
+  <!-- Page Header -->
+  <section class="bg-gradient-to-b from-ocean-950 to-slate-900 text-white py-12 md:py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-ocean-800/80 border border-ocean-700/80 text-ocean-200 mb-4">
+          <span>Duck, NC Local Guide</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">
+          Activities & Recreation
+        </h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          Whether you want to paddle across Currituck Sound, bike along the scenic Duck Trail, observe the Corolla wild mustangs, or catch evening sunsets on the boardwalk, Duck has it all.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activity Highlight Banner -->
+  <section class="max-w-6xl mx-auto px-4 -mt-6 relative z-10">
+    <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-coastal-100 text-coastal-800 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-bold text-slate-900 text-sm sm:text-base">Don't Miss: Duck Town Park & Sound Boardwalk</h2>
+          <p class="text-xs text-slate-600">Free admission, kayak/SUP launches, live summer concert series, and nearly a mile of wooden boardwalk over the water.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <a
+          href="/map?category=activities"
+          class="text-xs font-bold text-slate-700 hover:text-slate-950 inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 transition-colors"
+        >
+          <span>🗺️ View on Map</span>
+        </a>
+        <a
+          href="https://www.townofduck.com/parks-and-recreation/town-park-boardwalk/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-xs font-semibold px-4 py-2 rounded-lg bg-ocean-700 hover:bg-ocean-800 text-white transition-colors"
+        >
+          Park Events
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filterable Activities Directory -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <FilterableDirectory
+      items={ACTIVITIES}
+      directoryId="activities-directory"
+      searchPlaceholder="Search watersports, kayak, bike, wild horses, yoga, park..."
+    />
+  </section>
+</Layout>
+

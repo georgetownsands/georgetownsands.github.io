@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import InteractiveMap from '../components/InteractiveMap.astro';
+---
+
+<Layout
+  title="Interactive Map of Duck, NC | Restaurants, Shopping & Activities | Georgetown Sands"
+  description="Interactive map of Duck, North Carolina. Explore local restaurants, shopping villages, boardwalk parks, and activities with walking distances from Georgetown Sands townhomes."
+>
+  <!-- Page Header -->
+  <section class="bg-gradient-to-b from-ocean-950 to-slate-900 text-white py-10 md:py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-ocean-800/80 border border-ocean-700/80 text-ocean-200 mb-3">
+          <span>Outer Banks • Duck, NC</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-3">
+          Interactive Village Map
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          See everything around Georgetown Sands at a glance. Filter restaurants, shopping villages, and soundfront activities, click any pin to view details and directions, or search by name.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="max-w-6xl mx-auto px-4 -mt-6 relative z-20 pb-16">
+    <InteractiveMap />
+
+    <!-- Map Legend & Helpful Tips -->
+    <div class="mt-8 bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
+      <h3 class="text-sm font-bold uppercase tracking-wider text-slate-800 mb-3">Map Legend & Walking Distances</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-600">
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold shrink-0">⭐</span>
+          <div>
+            <div class="font-bold text-slate-900">Georgetown Sands</div>
+            <p class="text-slate-500">Your starting location on Duck Road with direct ocean beach access.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-rose-100 text-rose-800 flex items-center justify-center font-bold shrink-0">🍽️</span>
+          <div>
+            <div class="font-bold text-slate-900">Restaurants (31)</div>
+            <p class="text-slate-500">From boardwalk sunset dining to casual delis, pizza, and sweet shops.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold shrink-0">🛍️</span>
+          <div>
+            <div class="font-bold text-slate-900">Shopping Villages (10)</div>
+            <p class="text-slate-500">Waterfront Shops, Scarborough Faire, specialty seafood, and hammock stores.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-sky-100 text-sky-800 flex items-center justify-center font-bold shrink-0">🏄</span>
+          <div>
+            <div class="font-bold text-slate-900">Activities (10)</div>
+            <p class="text-slate-500">Town Park & Boardwalk, Duck Trail, watersports, bike rentals, and wild horse tours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+

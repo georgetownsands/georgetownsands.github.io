@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { COMMUNITY_INFO, RESTAURANTS, SHOPPING, ACTIVITIES } from '../data/area';
+
+const featuredDining = RESTAURANTS.filter(r => r.featured).slice(0, 3);
+---
+
+<Layout
+  title="Georgetown Sands | Oceanside Townhomes in Duck, NC"
+  description="Welcome to Georgetown Sands, an ocean-side townhome community on the northern Outer Banks in Duck, NC. Direct beach access, community pool, tennis, and local Duck guide."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-ocean-950 via-ocean-900 to-slate-900 text-white overflow-hidden py-16 md:py-24">
+    <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Hero Text -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-ocean-800/80 border border-ocean-700/80 text-ocean-200 mb-6 backdrop-blur-xs">
+            <span class="w-2 h-2 rounded-full bg-coastal-400"></span>
+            Outer Banks • Duck, North Carolina
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white mb-6">
+            Oceanside Living in the Heart of <span class="text-transparent bg-clip-text bg-gradient-to-r from-coastal-300 to-ocean-300">Duck, NC</span>
+          </h1>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            Georgetown Sands is an oceanside townhome community nestled on the northern Outer Banks. Just steps over the dunes to the Atlantic Ocean beach, and a leisurely stroll along the Duck Trail to soundfront boardwalks, world-class dining, and boutique shops.
+          </p>
+
+          <!-- Primary Hero Actions -->
+          <div class="flex flex-wrap gap-3 sm:gap-4 mb-8">
+            <a
+              href="/rent"
+              class="px-6 py-3 rounded-lg text-sm font-semibold bg-ocean-500 hover:bg-ocean-600 text-white transition-all shadow-md hover:shadow-lg inline-flex items-center gap-2"
+            >
+              <span>Vacation Rentals</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+
+            <a
+              href="/map"
+              class="px-5 py-3 rounded-lg text-sm font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-xs transition-all inline-flex items-center gap-2"
+            >
+              <span>🗺️ Village Map</span>
+            </a>
+
+            <a
+              href="/restaurants"
+              class="px-6 py-3 rounded-lg text-sm font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-xs transition-all inline-flex items-center gap-2"
+            >
+              <span>Explore Duck Guide</span>
+            </a>
+
+            <a
+              href={COMMUNITY_INFO.ownersPortalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-5 py-3 rounded-lg text-sm font-semibold bg-coastal-900/60 hover:bg-coastal-800/80 text-coastal-200 border border-coastal-500/40 backdrop-blur-xs transition-all inline-flex items-center gap-2"
+            >
+              <span>Owners Portal</span>
+              <svg class="w-3.5 h-3.5 text-coastal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Community Highlights Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300 pt-6 border-t border-slate-800">
+            <div class="flex items-center gap-2">
+              <span class="p-1 rounded bg-ocean-900/80 text-coastal-300">✓</span>
+              <span>Direct Beach Access</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="p-1 rounded bg-ocean-900/80 text-coastal-300">✓</span>
+              <span>Community Pool</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="p-1 rounded bg-ocean-900/80 text-coastal-300">✓</span>
+              <span>Tennis Courts</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="p-1 rounded bg-ocean-900/80 text-coastal-300">✓</span>
+              <span>Walk to Town</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Image -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group">
+            <img
+              src="/images/georgetownsands.jpeg"
+              alt="Georgetown Sands Townhomes in Duck, NC"
+              class="w-full h-auto object-cover transform group-hover:scale-102 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+              <div class="text-white">
+                <span class="text-xs uppercase tracking-wider text-coastal-300 font-semibold">Georgetown Sands</span>
+                <p class="text-sm font-medium text-slate-200">Ocean-side townhome living in Duck, NC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Amenities Section -->
+  <section class="max-w-6xl mx-auto px-4 -mt-8 relative z-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      {COMMUNITY_INFO.amenities.map((amenity) => (
+        <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-200/90 hover:border-ocean-300 transition-colors">
+          <div class="w-10 h-10 rounded-lg bg-ocean-50 text-ocean-700 flex items-center justify-center font-bold mb-3">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-1">{amenity.title}</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">{amenity.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Explore Duck, NC Directory Cards -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs font-bold uppercase tracking-wider text-ocean-600">Local Outer Banks Guide</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Explore Duck, North Carolina</h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-2">
+        Georgetown Sands places you right at the heart of one of the East Coast's premier coastal vacation destinations.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Dining Feature Card -->
+      <a href="/restaurants" class="group bg-white rounded-2xl p-6 border border-slate-200/90 hover:border-ocean-300 shadow-xs hover:shadow-md transition-all flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 group-hover:text-ocean-700 transition-colors mb-2">
+          Local Restaurants
+        </h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+          From soundfront fine dining at The Blue Point and AQUA to legendary NC barbecue at Duck Deli and original Duck Donuts.
+        </p>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-ocean-700 group-hover:text-ocean-900">
+          <span>View {RESTAURANTS.length} Restaurants</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </span>
+      </a>
+
+      <!-- Shopping Feature Card -->
+      <a href="/shopping" class="group bg-white rounded-2xl p-6 border border-slate-200/90 hover:border-ocean-300 shadow-xs hover:shadow-md transition-all flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-coastal-50 text-coastal-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 group-hover:text-ocean-700 transition-colors mb-2">
+          Village Shopping
+        </h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+          Stroll the boardwalk at The Waterfront Shops and beneath the live oaks of Scarborough Faire for independent boutiques and fresh markets.
+        </p>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-ocean-700 group-hover:text-ocean-900">
+          <span>View {SHOPPING.length} Shops & Markets</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </span>
+      </a>
+
+      <!-- Activities Feature Card -->
+      <a href="/activities" class="group bg-white rounded-2xl p-6 border border-slate-200/90 hover:border-ocean-300 shadow-xs hover:shadow-md transition-all flex flex-col">
+        <div class="w-12 h-12 rounded-xl bg-ocean-50 text-ocean-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 group-hover:text-ocean-700 transition-colors mb-2">
+          Activities & Recreation
+        </h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">
+          Duck Town Park & Boardwalk sunsets, water sports on Currituck Sound, bike rentals along the Duck Trail, and Corolla wild horse safaris.
+        </p>
+        <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-ocean-700 group-hover:text-ocean-900">
+          <span>View {ACTIVITIES.length} Activities</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Interactive Map Callout Banner -->
+  <section class="max-w-6xl mx-auto px-4 pb-16">
+    <div class="bg-gradient-to-r from-ocean-50 to-coastal-50 rounded-3xl p-8 md:p-10 border border-ocean-200/80 shadow-xs flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-start sm:items-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-ocean-600 text-white flex items-center justify-center shrink-0 shadow-sm text-2xl">
+          🗺️
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-ocean-700">Explore Nearby</span>
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">Interactive Duck Village Map</h3>
+          <p class="text-slate-600 text-sm mt-1 max-w-xl">
+            See walking and biking distances from Georgetown Sands to all 31 restaurants, shopping villages, and soundfront boardwalk activities with interactive pins and filters.
+          </p>
+        </div>
+      </div>
+      <a
+        href="/map"
+        class="shrink-0 px-6 py-3.5 rounded-xl font-semibold bg-ocean-700 hover:bg-ocean-800 text-white text-sm shadow-md transition-all flex items-center gap-2"
+      >
+        <span>Open Interactive Map</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Owners Portal Callout Banner -->
+  <section class="max-w-6xl mx-auto px-4 pb-16">
+    <div class="bg-gradient-to-r from-ocean-900 to-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border border-ocean-800">
+      <div class="max-w-xl">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-coastal-500/20 text-coastal-300 border border-coastal-500/30 uppercase tracking-wider mb-3 inline-block">
+          HOA & Community Portal
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+          Georgetown Sands Property Owners
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Access Association documents, dues payments, maintenance requests, community announcements, and directory services via the official Enumerate portal.
+        </p>
+      </div>
+
+      <a
+        href={COMMUNITY_INFO.ownersPortalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 px-6 py-3.5 rounded-xl font-semibold bg-coastal-400 hover:bg-coastal-300 text-slate-950 transition-colors shadow-lg flex items-center gap-2 text-sm"
+      >
+        <span>Open Owners Portal</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </section>
+</Layout>
+

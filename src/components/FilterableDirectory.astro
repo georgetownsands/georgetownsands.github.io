@@ -1,0 +1,158 @@
+---
+import type { DirectoryItem } from '../data/area';
+import DirectoryCard from './DirectoryCard.astro';
+
+export interface Props {
+  items: DirectoryItem[];
+  searchPlaceholder?: string;
+  directoryId: string;
+}
+
+const {
+  items,
+  searchPlaceholder = "Search by name, cuisine, tag, or description...",
+  directoryId
+} = Astro.props;
+
+// Extract unique categories
+const categories = ["All", ...Array.from(new Set(items.map((item) => item.category)))];
+---
+
+<div id={directoryId} class="directory-container">
+  <!-- Search & Category Filter Controls -->
+  <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-xs mb-8">
+    <div class="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center">
+      <!-- Search Input -->
+      <div class="relative flex-grow max-w-lg">
+        <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <input
+          type="text"
+          class="directory-search w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-200 text-sm focus:outline-hidden focus:ring-2 focus:ring-ocean-500 focus:border-transparent transition-all placeholder:text-slate-400"
+          placeholder={searchPlaceholder}
+        />
+      </div>
+
+      <!-- Result Count Badge -->
+      <div class="text-xs font-medium text-slate-500 shrink-0 self-center">
+        Showing <span class="directory-count font-semibold text-slate-800">{items.length}</span> of {items.length} places
+      </div>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-100">
+      {categories.map((cat, idx) => (
+        <button
+          type="button"
+          data-category={cat.toLowerCase()}
+          class={`filter-pill px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+            idx === 0
+              ? 'bg-ocean-700 text-white shadow-xs active-pill'
+              : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+          }`}
+        >
+          {cat}
+        </button>
+      ))}
+    </div>
+  </div>
+
+  <!-- Cards Grid -->
+  <div class="directory-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {items.map((item) => (
+      <div class="directory-card-wrapper">
+        <DirectoryCard item={item} />
+      </div>
+    ))}
+  </div>
+
+  <!-- Empty Results State -->
+  <div class="directory-empty hidden py-16 text-center bg-white rounded-2xl border border-dashed border-slate-300">
+    <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <h3 class="text-base font-semibold text-slate-800 mb-1">No matches found</h3>
+    <p class="text-sm text-slate-500 max-w-sm mx-auto">Try clearing your search terms or picking another category filter above.</p>
+  </div>
+</div>
+
+<script define:vars={{ directoryId }}>
+  const container = document.getElementById(directoryId);
+  if (container) {
+    const searchInput = container.querySelector('.directory-search');
+    const pills = container.querySelectorAll('.filter-pill');
+    const cardWrappers = container.querySelectorAll('.directory-card-wrapper');
+    const countEl = container.querySelector('.directory-count');
+    const emptyEl = container.querySelector('.directory-empty');
+
+    let activeCategory = 'all';
+    let searchTerm = '';
+
+    function filterCards() {
+      let visibleCount = 0;
+
+      cardWrappers.forEach((wrapper) => {
+        const card = wrapper.querySelector('[data-name]');
+        if (!card) return;
+
+        const name = card.getAttribute('data-name') || '';
+        const category = card.getAttribute('data-category') || '';
+        const tags = card.getAttribute('data-tags') || '';
+        const desc = card.getAttribute('data-description') || '';
+
+        const matchesCategory =
+          activeCategory === 'all' || category === activeCategory;
+
+        const searchHaystack = `${name} ${category} ${tags} ${desc}`.toLowerCase();
+        const matchesSearch =
+          searchTerm === '' || searchHaystack.includes(searchTerm);
+
+        if (matchesCategory && matchesSearch) {
+          wrapper.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          wrapper.classList.add('hidden');
+        }
+      });
+
+      if (countEl) countEl.textContent = String(visibleCount);
+
+      if (emptyEl) {
+        if (visibleCount === 0) {
+          emptyEl.classList.remove('hidden');
+        } else {
+          emptyEl.classList.add('hidden');
+        }
+      }
+    }
+
+    // Category button clicks
+    pills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        pills.forEach((p) => {
+          p.classList.remove('bg-ocean-700', 'text-white', 'shadow-xs', 'active-pill');
+          p.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        pill.classList.remove('bg-slate-100', 'text-slate-700');
+        pill.classList.add('bg-ocean-700', 'text-white', 'shadow-xs', 'active-pill');
+
+        activeCategory = pill.getAttribute('data-category') || 'all';
+        filterCards();
+      });
+    });
+
+    // Instant search input
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchTerm = e.target.value.trim().toLowerCase();
+        filterCards();
+      });
+    }
+  }
+</script>
+
