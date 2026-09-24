@@ -712,3 +712,83 @@ export const RENTAL_AGENCIES = [
   }
 ];
 
+export interface OwnerResource {
+  id: string;
+  name: string;
+  subtitle: string;
+  category: string;
+  badge: string;
+  badgeColor: string;
+  description: string;
+  features: string[];
+  url: string;
+  actionText: string;
+  phone?: string;
+  email?: string;
+  address?: string;
+  icon: string;
+}
+
+export const OWNER_RESOURCES: OwnerResource[] = [
+  {
+    id: "enumerate-engage",
+    name: "Georgetown Sands Owners Portal",
+    subtitle: "Official HOA Community & Account Portal (Enumerate Engage)",
+    category: "HOA & Account Management",
+    badge: "Official Portal",
+    badgeColor: "bg-ocean-100 text-ocean-800 border-ocean-200",
+    description: "The primary resident and homeowner portal for Georgetown Sands Property Owners Association (POA) members. Powered by Enumerate Engage, this secure platform gives owners 24/7 access to account statements, dues payments, community bylaws, governance records, and official association notices.",
+    features: [
+      "Pay annual and quarterly HOA assessments and dues online",
+      "Access governing documents, covenants, bylaws, and insurance information",
+      "Review Board meeting minutes, financial statements, and annual budgets",
+      "Submit and track architectural review requests and maintenance tickets",
+      "View community directory, announcements, and important HOA updates"
+    ],
+    url: "https://engage.goenumerate.com/s/GSP/",
+    actionText: "Log In to Owners Portal",
+    icon: "shield"
+  },
+  {
+    id: "signature-touch",
+    name: "Signature Touch Property Management",
+    subtitle: "Association Management & Property Maintenance Partner",
+    category: "Property Management & Maintenance",
+    badge: "Association Management",
+    badgeColor: "bg-coastal-100 text-coastal-800 border-coastal-200",
+    description: "Signature Touch Property Management is the dedicated full-service association management and property maintenance partner for Georgetown Sands. Serving communities throughout Currituck and Dare Counties, they handle day-to-day operations, common element repairs, vendor oversight, and grounds upkeep.",
+    features: [
+      "Full-service association management and operations oversight",
+      "Exterior building maintenance, grounds, and common area care",
+      "Pool, tennis court, dune crossovers, and boardwalk maintenance",
+      "Contractor, vendor, and capital improvement project management",
+      "Assistance with property maintenance inquiries and community repairs"
+    ],
+    url: "https://signaturetouchobx.com/",
+    actionText: "Visit Signature Touch OBX",
+    phone: "252-441-8857",
+    icon: "building"
+  },
+  {
+    id: "connect-duck-pd",
+    name: "Connect Duck",
+    subtitle: "Town of Duck Police Department Public Safety Initiative",
+    category: "Community Safety & Security",
+    badge: "Duck Police Dept.",
+    badgeColor: "bg-amber-100 text-amber-800 border-amber-200",
+    description: "Connect Duck is a public safety program operated by the Town of Duck Police Department enabling Georgetown Sands homeowners, residents, and businesses to collaborate with local law enforcement to keep Duck safe.",
+    features: [
+      "Level 1 (Camera Registration): Register exterior cameras (Ring, Nest, etc.) so investigators know camera locations if an incident occurs nearby",
+      "Registration is fast, free, and does NOT give police access to your live stream (officers only contact you if footage is needed)",
+      "Level 2 (Camera Integration): Optional direct feed integration for heightened emergency response",
+      "Strengthens crime prevention and neighborhood safety throughout the Duck village",
+      "Direct connection to Duck Police Department community resources"
+    ],
+    url: "https://connectduckpdnc.org/",
+    actionText: "Visit Connect Duck Registry",
+    address: "1200 Duck Road, Duck, NC 27949",
+    icon: "camera"
+  }
+];
+
+

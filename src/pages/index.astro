@@ -57,14 +57,12 @@ const featuredDining = RESTAURANTS.filter(r => r.featured).slice(0, 3);
             </a>
 
             <a
-              href={COMMUNITY_INFO.ownersPortalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/owners"
               class="px-5 py-3 rounded-lg text-sm font-semibold bg-coastal-900/60 hover:bg-coastal-800/80 text-coastal-200 border border-coastal-500/40 backdrop-blur-xs transition-all inline-flex items-center gap-2"
             >
-              <span>Owners Portal</span>
+              <span>Owners Page</span>
               <svg class="w-3.5 h-3.5 text-coastal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
           </div>
@@ -230,30 +228,28 @@ const featuredDining = RESTAURANTS.filter(r => r.featured).slice(0, 3);
     </div>
   </section>
 
-  <!-- Owners Portal Callout Banner -->
+  <!-- Owners Resources Callout Banner -->
   <section class="max-w-6xl mx-auto px-4 pb-16">
     <div class="bg-gradient-to-r from-ocean-900 to-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 border border-ocean-800">
       <div class="max-w-xl">
         <span class="px-3 py-1 rounded-full text-xs font-semibold bg-coastal-500/20 text-coastal-300 border border-coastal-500/30 uppercase tracking-wider mb-3 inline-block">
-          HOA & Community Portal
+          HOA & Community Resources
         </span>
         <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">
           Georgetown Sands Property Owners
         </h2>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          Access Association documents, dues payments, maintenance requests, community announcements, and directory services via the official Enumerate portal.
+          Access the HOA portal, property management contacts, town public safety registration, dues payments, and community resources.
         </p>
       </div>
 
       <a
-        href={COMMUNITY_INFO.ownersPortalUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/owners"
         class="shrink-0 px-6 py-3.5 rounded-xl font-semibold bg-coastal-400 hover:bg-coastal-300 text-slate-950 transition-colors shadow-lg flex items-center gap-2 text-sm"
       >
-        <span>Open Owners Portal</span>
+        <span>Visit Owners Page</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </a>
     </div>
