@@ -53,7 +53,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "the-blue-point",
-    coordinates: { lat: 36.168, lng: -75.7552},
+    coordinates: { lat: 36.1709, lng: -75.7562},
     name: "The Blue Point",
     category: "Fine Dining",
     tags: ["Waterfront", "Sunset Views", "Seafood", "Boardwalk"],
@@ -66,7 +66,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "aqua-restaurant",
-    coordinates: { lat: 36.1647, lng: -75.7533 },
+    coordinates: { lat: 36.1621, lng: -75.7527 },
     name: "AQUA Restaurant & Spa",
     category: "Fine Dining",
     tags: ["Waterfront", "Sunset Views", "Seafood", "Spa"],
@@ -79,7 +79,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "nc-coast-grill",
-    coordinates: { lat: 36.1658, lng: -75.7538 },
+    coordinates: { lat: 36.1633, lng: -75.7528 },
     name: "NC Coast Grill & Bar",
     category: "Fine Dining",
     tags: ["Waterfront", "Seafood", "Creative", "Boardwalk"],
@@ -92,7 +92,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "roadside-bar-grill",
-    coordinates: { lat: 36.1664, lng: -75.7523 },
+    coordinates: { lat: 36.1645, lng: -75.7524 },
     name: "The Roadside Bar & Grill",
     category: "Casual Dining",
     tags: ["Raw Bar", "Outdoor Patio", "Local Favorite", "Live Music"],
@@ -104,7 +104,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "coastal-cantina",
-    coordinates: { lat: 36.1677, lng: -75.7547 },
+    coordinates: { lat: 36.1705, lng: -75.7561 },
     name: "Coastal Cantina",
     category: "Casual Dining",
     tags: ["Waterfront", "Mexican", "Boardwalk", "Outdoor Deck"],
@@ -116,7 +116,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "cravings-raw-bar",
-    coordinates: { lat: 36.1668, lng: -75.7526 },
+    coordinates: { lat: 36.1658, lng: -75.7528 },
     name: "Cravings Steamer & Raw Bar",
     category: "Casual Dining",
     tags: ["Seafood Steamer", "Diners Drive-Ins & Dives", "Raw Bar"],
@@ -128,7 +128,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "duck-deli",
-    coordinates: { lat: 36.1672, lng: -75.753 },
+    coordinates: { lat: 36.1681, lng: -75.7551 },
     name: "Duck Deli & 5 O'Clock Bar",
     category: "Casual Dining",
     tags: ["BBQ", "Outdoor Bar", "Sandwiches", "Family-Friendly", "Lunch"],
@@ -140,7 +140,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "red-sky-cafe",
-    coordinates: { lat: 36.1665, lng: -75.7524 },
+    coordinates: { lat: 36.1648, lng: -75.7525 },
     name: "Red Sky Cafe",
     category: "Casual Dining",
     tags: ["Seafood", "Catering", "Southern"],
@@ -152,7 +152,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "theodosia-sanderling",
-    coordinates: { lat: 36.1988, lng: -75.7672},
+    coordinates: { lat: 36.2247, lng: -75.7717},
     name: "Theodosia (Sanderling Resort)",
     category: "Fine Dining",
     tags: ["Waterfront", "Celebrity Chef", "Elevated Southern", "New Addition"],
@@ -165,7 +165,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "paper-canoe",
-    coordinates: { lat: 36.1825, lng: -75.7602 },
+    coordinates: { lat: 36.2216, lng: -75.7707 },
     name: "The Paper Canoe",
     category: "Fine Dining",
     tags: ["Waterfront", "Sunset Views", "Wood-Fired", "Handmade Pasta"],
@@ -178,7 +178,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "sunset-grille",
-    coordinates: { lat: 36.1702, lng: -75.7558 },
+    coordinates: { lat: 36.1754, lng: -75.7561 },
     name: "Sunset Grille & Raw Bar",
     category: "Casual Dining",
     tags: ["Waterfront", "Tiki Bars", "Live Music", "Sushi & Raw Bar"],
@@ -190,7 +190,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "eventide",
-    coordinates: { lat: 36.1663, lng: -75.7537},
+    coordinates: { lat: 36.1643, lng: -75.7529},
     name: "Eventide",
     category: "Casual Dining",
     tags: ["Waterfront", "Wine & Charcuterie", "Sunset Views", "Small Plates"],
@@ -202,7 +202,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "vine-and-board",
-    coordinates: { lat: 36.165, lng: -75.7514},
+    coordinates: { lat: 36.1625, lng: -75.7524},
     name: "Vine & Board",
     category: "Casual Dining",
     tags: ["Wine Bar", "Charcuterie", "Scarborough Faire", "Outdoor Seating", "Newer Addition"],
@@ -214,7 +214,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "swells-a-brewing",
-    coordinates: { lat: 36.1642, lng: -75.7523 },
+    coordinates: { lat: 36.1615, lng: -75.7522 },
     name: "Swells'a Brewing Duck Dive Bar",
     category: "Casual Dining",
     tags: ["Craft Brewery", "Beer Garden", "Outdoor Patio", "Dog Friendly", "Live Music", "Newer Addition"],
@@ -225,7 +225,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "bangkok-thai-sushi",
-    coordinates: { lat: 36.1648, lng: -75.7518},
+    coordinates: { lat: 36.1626, lng: -75.7527},
     name: "Bangkok Thai & Sushi",
     category: "Casual Dining",
     tags: ["Thai", "Sushi", "Scarborough Faire"],
@@ -237,7 +237,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "lifesaving-station",
-    coordinates: { lat: 36.1985, lng: -75.7675 },
+    coordinates: { lat: 36.2245, lng: -75.7715 },
     name: "Lifesaving Station Restaurant",
     category: "Casual Dining",
     tags: ["Historic", "Breakfast & Dinner", "Southern Coastal"],
@@ -249,7 +249,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "fishbones-raw-bar",
-    coordinates: { lat: 36.1646, lng: -75.7527},
+    coordinates: { lat: 36.1618, lng: -75.7525},
     name: "Fishbones Raw Bar & Restaurant",
     category: "Casual Dining",
     tags: ["Seafood", "Raw Bar", "Caribbean"],
@@ -261,7 +261,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "village-table-tavern",
-    coordinates: { lat: 36.1733, lng: -75.7567},
+    coordinates: { lat: 36.1877, lng: -75.7593},
     name: "Village Table & Tavern",
     category: "Casual Dining",
     tags: ["Waterfront", "Sound Views", "Craft Beer", "Outdoor Seating"],
@@ -273,7 +273,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "duck-donuts",
-    coordinates: { lat: 36.1661, lng: -75.7533},
+    coordinates: { lat: 36.1643, lng: -75.7527},
     name: "Duck Donuts (The Original)",
     category: "Coffee & Sweets",
     tags: ["Donuts", "Breakfast", "Famous", "Original Location"],
@@ -285,7 +285,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "big-bucks-ice-cream",
-    coordinates: { lat: 36.1652, lng: -75.7521 },
+    coordinates: { lat: 36.1628, lng: -75.7526 },
     name: "Big Buck's Homemade Ice Cream",
     category: "Coffee & Sweets",
     tags: ["Ice Cream", "Homemade", "Dessert", "Fudge"],
@@ -297,11 +297,11 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "ducks-cottage",
-    coordinates: { lat: 36.1651, lng: -75.7517},
+    coordinates: { lat: 36.1627, lng: -75.7525},
     name: "Duck's Cottage Coffee & Books",
     category: "Coffee & Sweets",
     tags: ["Coffee", "Bookstore", "Historic Cottage", "Local Landmark"],
-    address: "1240 Duck Rd, Scarborough Faire, Duck, NC 27949",
+    address: "1177 Duck Rd, Scarborough Faire, Duck, NC 27949",
     phoneNumber: "252-261-5510",
     webSite: "https://duckscottage.com/",
     description: "A beloved Outer Banks institution housed in a 200-year-old historic powder shack. Famous for their signature Coconut Crunch coffee, specialty drinks, pastries, and curated bookstore."
@@ -309,7 +309,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "treehouse-coffee",
-    coordinates: { lat: 36.1647, lng: -75.7515},
+    coordinates: { lat: 36.1624, lng: -75.7525},
     name: "Treehouse Coffee Co.",
     category: "Coffee & Sweets",
     tags: ["Artisan Coffee", "Espresso", "Biscuits", "Breakfast"],
@@ -321,7 +321,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "sweet-ts",
-    coordinates: { lat: 36.1669, lng: -75.7527 },
+    coordinates: { lat: 36.1661, lng: -75.7529 },
     name: "Sweet T's Coffee, Beer & Wine",
     category: "Coffee & Sweets",
     tags: ["Coffee", "Craft Beer", "Wine Tasting", "Outdoor Patio"],
@@ -333,7 +333,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "tullios-bakery",
-    coordinates: { lat: 36.1656, lng: -75.7519},
+    coordinates: { lat: 36.1639, lng: -75.7528},
     name: "Tullio's Bakery",
     category: "Coffee & Sweets",
     tags: ["Bakery", "Pastries", "Bagels", "Breakfast"],
@@ -345,7 +345,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "duck-pizza-company",
-    coordinates: { lat: 36.1644, lng: -75.7523},
+    coordinates: { lat: 36.1616, lng: -75.7523},
     name: "Duck Pizza Company",
     category: "Pizza & Casual",
     tags: ["Pizza", "Takeout", "Family Favorite"],
@@ -357,7 +357,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "pizzazz-pizza",
-    coordinates: { lat: 36.1654, lng: -75.7521},
+    coordinates: { lat: 36.1637, lng: -75.7527},
     name: "Pizzazz Pizza",
     category: "Pizza & Casual",
     tags: ["Pizza", "Delivery", "Late Night"],
@@ -369,7 +369,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "cookshak-chicken",
-    coordinates: { lat: 36.1649, lng: -75.7519},
+    coordinates: { lat: 36.1638, lng: -75.7526},
     name: "The Cookshak Fried Chicken",
     category: "Casual Dining",
     tags: ["Fried Chicken", "Southern Comfort", "Takeout & Delivery", "Loblolly Pines"],
@@ -381,7 +381,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "island-smoothie-cafe",
-    coordinates: { lat: 36.1643, lng: -75.7526},
+    coordinates: { lat: 36.1617, lng: -75.7525},
     name: "Island Smoothie Cafe",
     category: "Coffee & Sweets",
     tags: ["Acai Bowls", "Smoothies", "Healthy Bites", "Breakfast", "Scarborough Lane"],
@@ -393,7 +393,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "hawaiian-island-coffee",
-    coordinates: { lat: 36.1659, lng: -75.7535},
+    coordinates: { lat: 36.1642, lng: -75.7528},
     name: "Hawaiian Island Coffee & Ice Cream",
     category: "Coffee & Sweets",
     tags: ["Shaved Ice", "Gelato", "Coffee", "Waterfront Deck", "Osprey Landing"],
@@ -405,7 +405,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "chill-spot",
-    coordinates: { lat: 36.1655, lng: -75.7523},
+    coordinates: { lat: 36.1639, lng: -75.7527},
     name: "The Chill Spot",
     category: "Coffee & Sweets",
     tags: ["Ice Cream", "Dessert", "Milkshakes", "Loblolly Pines"],
@@ -417,7 +417,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "the-fudgery",
-    coordinates: { lat: 36.1646, lng: -75.7523},
+    coordinates: { lat: 36.1618, lng: -75.7524},
     name: "The Fudgery",
     category: "Coffee & Sweets",
     tags: ["Fudge", "Candy", "Interactive", "Scarborough Lane"],
@@ -432,7 +432,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "waterfront-shops",
-    coordinates: { lat: 36.1678, lng: -75.7548 },
+    coordinates: { lat: 36.1709, lng: -75.7560 },
     name: "The Waterfront Shops",
     category: "Shopping Village",
     tags: ["Boardwalk", "Boutiques", "Soundfront", "Dining"],
@@ -444,7 +444,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "scarborough-faire",
-    coordinates: { lat: 36.1649, lng: -75.7516 },
+    coordinates: { lat: 36.1625, lng: -75.7526 },
     name: "Scarborough Faire Shopping Village",
     category: "Shopping Village",
     tags: ["Tree Canopy", "Artisan", "Coffee & Books", "Boutiques"],
@@ -456,7 +456,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "scarborough-lane",
-    coordinates: { lat: 36.1645, lng: -75.7525 },
+    coordinates: { lat: 36.1617, lng: -75.7524 },
     name: "Scarborough Lane Shoppes",
     category: "Shopping Village",
     tags: ["Shopping Center", "Covered Porches", "Boutiques", "Food"],
@@ -468,7 +468,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "dockside-n-duck",
-    coordinates: { lat: 36.167, lng: -75.753},
+    coordinates: { lat: 36.1674, lng: -75.7551},
     name: "Dockside 'N Duck Seafood Market",
     category: "Markets & Specialty",
     tags: ["Fresh Seafood", "Steamed Shrimp", "Local Catch"],
@@ -480,7 +480,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "green-acres-farm-market",
-    coordinates: { lat: 36.1672, lng: -75.7533 },
+    coordinates: { lat: 36.1676, lng: -75.7549 },
     name: "Green Acres Farm Market",
     category: "Markets & Specialty",
     tags: ["Local Produce", "NC Peaches", "Baked Goods", "Jams"],
@@ -491,7 +491,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "wee-winks-market",
-    coordinates: { lat: 36.1671, lng: -75.7528 },
+    coordinates: { lat: 36.1666, lng: -75.7530 },
     name: "Wee Winks Deli & Market",
     category: "Markets & Specialty",
     tags: ["Deli", "Convenience", "Beach Supplies"],
@@ -503,7 +503,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "nags-head-hammocks",
-    coordinates: { lat: 36.167, lng: -75.7531 },
+    coordinates: { lat: 36.1664, lng: -75.7531 },
     name: "Nags Head Hammocks",
     category: "Home & Coastal Goods",
     tags: ["Handcrafted", "Hammocks", "Outdoor Furniture"],
@@ -515,7 +515,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "kellogg-supply-cottage-shop",
-    coordinates: { lat: 36.1667, lng: -75.7523},
+    coordinates: { lat: 36.1651, lng: -75.7527},
     name: "Kellogg Supply Co. & The Cottage Shop",
     category: "Home & Coastal Goods",
     tags: ["Hardware", "Coastal Decor", "Beach Chairs", "Gifts"],
@@ -527,7 +527,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "sound-feet-shoes",
-    coordinates: { lat: 36.1663, lng: -75.7523 },
+    coordinates: { lat: 36.1646, lng: -75.7526 },
     name: "Sound Feet Shoes",
     category: "Apparel & Shoes",
     tags: ["Sandals", "Water Shoes", "Name Brands"],
@@ -539,7 +539,7 @@ export const SHOPPING: DirectoryItem[] = [
   {
     
     id: "abc-store-duck",
-    coordinates: { lat: 36.1671, lng: -75.7534},
+    coordinates: { lat: 36.1675, lng: -75.7550},
     name: "Duck ABC Store",
     category: "Markets & Specialty",
     tags: ["Spirits", "Liquor"],
@@ -550,7 +550,7 @@ export const SHOPPING: DirectoryItem[] = [
   },
   {
     id: "sunshine-family-pharmacy",
-    coordinates: { lat: 36.1653, lng: -75.7522 },
+    coordinates: { lat: 36.1638, lng: -75.7527 },
     name: "Sunshine Family Pharmacy",
     category: "Pharmacy & Health",
     tags: ["Pharmacy", "Prescriptions", "Health & Wellness", "First Aid", "Loblolly Pines"],
@@ -565,7 +565,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "duck-town-park",
-    coordinates: { lat: 36.1652, lng: -75.7538 },
+    coordinates: { lat: 36.1650, lng: -75.7530 },
     name: "Duck Town Park & Sound Boardwalk",
     category: "Parks & Trails",
     tags: ["Boardwalk", "Sunset", "Free", "Kayak Launch", "Playground"],
@@ -590,7 +590,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "kitty-hawk-kites",
-    coordinates: { lat: 36.1675, lng: -75.7545 },
+    coordinates: { lat: 36.1685, lng: -75.7553 },
     name: "Kitty Hawk Kites - Duck",
     category: "Watersports & Adventures",
     tags: ["Kayak Tours", "Paddleboarding", "Parasailing", "Rentals"],
@@ -602,7 +602,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "norbanks-watersports",
-    coordinates: { lat: 36.1735, lng: -75.757 },
+    coordinates: { lat: 36.1878, lng: -75.7595 },
     name: "Nor'Banks Sailing & Watersports",
     category: "Watersports & Adventures",
     tags: ["Boat Rentals", "WaveRunners", "Parasailing", "Tubing"],
@@ -614,7 +614,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "duck-cycle",
-    coordinates: { lat: 36.182, lng: -75.76 },
+    coordinates: { lat: 36.2218, lng: -75.7706 },
     name: "Duck Cycle",
     category: "Bike & Beach Rentals",
     tags: ["Bike Rental", "Beach Gear", "Free Delivery"],
@@ -626,7 +626,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "duck-village-outfitters",
-    coordinates: { lat: 36.1667, lng: -75.7527},
+    coordinates: { lat: 36.1655, lng: -75.7528},
     name: "Duck Village Outfitters (DVO)",
     category: "Bike & Beach Rentals",
     tags: ["Surfboards", "Paddleboards", "Bikes", "Beach Gear"],
@@ -638,7 +638,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "corolla-wild-horses",
-    coordinates: { lat: 36.378, lng: -75.83 },
+    coordinates: { lat: 36.3768, lng: -75.8239 },
     name: "Corolla Wild Horse Tours",
     category: "Tours & Excursions",
     tags: ["Wild Mustangs", "4x4 Excursion", "Family Friendly"],
@@ -650,7 +650,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "wild-horse-adventure-tours",
-    coordinates: { lat: 36.375, lng: -75.828 },
+    coordinates: { lat: 36.3688, lng: -75.8239 },
     name: "Wild Horse Adventure Tours",
     category: "Tours & Excursions",
     tags: ["Wild Mustangs", "Custom 4x4", "Award Winning"],
@@ -662,7 +662,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "village-yoga",
-    coordinates: { lat: 36.1676, lng: -75.7545},
+    coordinates: { lat: 36.1708, lng: -75.7559},
     name: "Village Yoga",
     category: "Fitness & Wellness",
     tags: ["Yoga", "Soundside Yoga", "Drop-ins Welcome"],
@@ -674,7 +674,7 @@ export const ACTIVITIES: DirectoryItem[] = [
   {
     
     id: "yoga-on-the-green",
-    coordinates: { lat: 36.165, lng: -75.7535},
+    coordinates: { lat: 36.1651, lng: -75.7529},
     name: "Yoga on the Green (Duck Town Park)",
     category: "Fitness & Wellness",
     tags: ["Free Community Class", "Outdoor Park", "Summer"],
@@ -688,7 +688,7 @@ export const ACTIVITIES: DirectoryItem[] = [
 export const TOWN_SERVICES: DirectoryItem[] = [
   {
     id: "duck-police-department",
-    coordinates: { lat: 36.1752, lng: -75.7537 },
+    coordinates: { lat: 36.1854, lng: -75.7580 },
     name: "Duck Police Department",
     category: "Public Safety",
     tags: ["Police", "Public Safety", "Law Enforcement", "Emergency: 911", "Town Services"],
@@ -700,7 +700,7 @@ export const TOWN_SERVICES: DirectoryItem[] = [
   },
   {
     id: "duck-fire-department",
-    coordinates: { lat: 36.1750, lng: -75.7539 },
+    coordinates: { lat: 36.1852, lng: -75.7579 },
     name: "Duck Fire Department",
     category: "Public Safety",
     tags: ["Fire Department", "EMS", "Rescue", "Station 11", "Emergency: 911", "Public Safety"],
@@ -712,7 +712,7 @@ export const TOWN_SERVICES: DirectoryItem[] = [
   },
   {
     id: "duck-post-office",
-    coordinates: { lat: 36.1656, lng: -75.7520 },
+    coordinates: { lat: 36.1640, lng: -75.7526 },
     name: "Duck Post Office",
     category: "Postal & Shipping",
     tags: ["Post Office", "USPS", "Mail", "Shipping", "Stamps", "Loblolly Pines"],
