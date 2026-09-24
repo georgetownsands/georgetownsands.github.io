@@ -547,6 +547,17 @@ export const SHOPPING: DirectoryItem[] = [
     phoneNumber: "252-261-6981",
     webSite: "https://abc.nc.gov/",
     description: "State-operated ABC spirits store stocked with an extensive selection of distilled spirits, mixers, and specialty liquors."
+  },
+  {
+    id: "sunshine-family-pharmacy",
+    coordinates: { lat: 36.1653, lng: -75.7522 },
+    name: "Sunshine Family Pharmacy",
+    category: "Pharmacy & Health",
+    tags: ["Pharmacy", "Prescriptions", "Health & Wellness", "First Aid", "Loblolly Pines"],
+    address: "1187 Duck Rd, Duck, NC 27949",
+    phoneNumber: "252-715-0170",
+    webSite: "https://www.mygnp.com/pharmacies/sunshine-family-pharmacy-duck-nc-27949/",
+    description: "Full-service independent community pharmacy in Duck offering prescription dispensing, over-the-counter medications, health and wellness essentials, sun care, beach first-aid supplies, and personalized patient care in Loblolly Pines."
   }
 ];
 
@@ -674,6 +685,45 @@ export const ACTIVITIES: DirectoryItem[] = [
   }
 ];
 
+export const TOWN_SERVICES: DirectoryItem[] = [
+  {
+    id: "duck-police-department",
+    coordinates: { lat: 36.1752, lng: -75.7537 },
+    name: "Duck Police Department",
+    category: "Public Safety",
+    tags: ["Police", "Public Safety", "Law Enforcement", "Emergency: 911", "Town Services"],
+    address: "1259 Duck Rd, Duck, NC 27949",
+    phoneNumber: "252-261-3860",
+    webSite: "https://www.townofduck.com/police/",
+    description: "Town of Duck Police Department headquarters situated in the Public Safety Building. Providing 24/7 law enforcement, community policing, beach safety patrols, bicycle registration, and residential property security checks. Dial 911 for emergencies.",
+    featured: true
+  },
+  {
+    id: "duck-fire-department",
+    coordinates: { lat: 36.1750, lng: -75.7539 },
+    name: "Duck Fire Department",
+    category: "Public Safety",
+    tags: ["Fire Department", "EMS", "Rescue", "Station 11", "Emergency: 911", "Public Safety"],
+    address: "1259 Duck Rd, Duck, NC 27949",
+    phoneNumber: "252-261-3929",
+    webSite: "https://duckfire.org/",
+    description: "Duck Fire Department & EMS (Station 11) located in the Public Safety Building. Providing 24/7 structural and wildland fire protection, advanced life support emergency medical response, and ocean rescue coordination. Dial 911 for emergencies.",
+    featured: true
+  },
+  {
+    id: "duck-post-office",
+    coordinates: { lat: 36.1656, lng: -75.7520 },
+    name: "Duck Post Office",
+    category: "Postal & Shipping",
+    tags: ["Post Office", "USPS", "Mail", "Shipping", "Stamps", "Loblolly Pines"],
+    address: "1187 Duck Rd, Loblolly Pines, Duck, NC 27949",
+    phoneNumber: "252-261-3600",
+    webSite: "https://tools.usps.com/find-locations.htm?location=1361250",
+    description: "Official United States Postal Service Contract Postal Unit (CPU) serving Duck, located inside The Cacique Shoppe at Loblolly Pines. Provides postage stamps, priority parcel shipping, letter mail drop-off, and domestic package services.",
+    featured: true
+  }
+];
+
 export const RENTAL_AGENCIES = [
   {
     name: "Brindley Beach Vacations",
@@ -786,7 +836,7 @@ export const OWNER_RESOURCES: OwnerResource[] = [
     ],
     url: "https://connectduckpdnc.org/",
     actionText: "Visit Connect Duck Registry",
-    address: "1200 Duck Road, Duck, NC 27949",
+    address: "1259 Duck Road, Duck, NC 27949",
     icon: "camera"
   }
 ];

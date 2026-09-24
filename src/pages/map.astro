@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import InteractiveMap from '../components/InteractiveMap.astro';
+import { RESTAURANTS, SHOPPING, ACTIVITIES, TOWN_SERVICES } from '../data/area';
 ---
 
 <Layout
-  title="Interactive Map of Duck, NC | Restaurants, Shopping & Activities | Georgetown Sands"
-  description="Interactive map of Duck, North Carolina. Explore local restaurants, shopping villages, boardwalk parks, and activities with walking distances from Georgetown Sands townhomes."
+  title="Interactive Map of Duck, NC | Restaurants, Shopping, Activities & Services | Georgetown Sands"
+  description="Interactive map of Duck, North Carolina. Explore local restaurants, shopping villages, boardwalk parks, activities, Duck Police & Fire, and Post Office with walking distances from Georgetown Sands townhomes."
 >
   <!-- Page Header -->
   <section class="bg-gradient-to-b from-ocean-950 to-slate-900 text-white py-10 md:py-14">
@@ -18,7 +19,7 @@ import InteractiveMap from '../components/InteractiveMap.astro';
           Interactive Village Map
         </h1>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          See everything around Georgetown Sands at a glance. Filter restaurants, shopping villages, and soundfront activities, click any pin to view details and directions, or search by name.
+          See everything around Georgetown Sands at a glance. Filter restaurants, shopping and pharmacy, soundfront activities, and town services, click any pin to view details and directions, or search by name.
         </p>
       </div>
     </div>
@@ -31,7 +32,7 @@ import InteractiveMap from '../components/InteractiveMap.astro';
     <!-- Map Legend & Helpful Tips -->
     <div class="mt-8 bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
       <h3 class="text-sm font-bold uppercase tracking-wider text-slate-800 mb-3">Map Legend & Walking Distances</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-600">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 text-xs text-slate-600">
         <div class="flex items-start gap-2.5">
           <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold shrink-0">⭐</span>
           <div>
@@ -42,22 +43,29 @@ import InteractiveMap from '../components/InteractiveMap.astro';
         <div class="flex items-start gap-2.5">
           <span class="w-6 h-6 rounded-full bg-rose-100 text-rose-800 flex items-center justify-center font-bold shrink-0">🍽️</span>
           <div>
-            <div class="font-bold text-slate-900">Restaurants (31)</div>
+            <div class="font-bold text-slate-900">Restaurants ({RESTAURANTS.length})</div>
             <p class="text-slate-500">From boardwalk sunset dining to casual delis, pizza, and sweet shops.</p>
           </div>
         </div>
         <div class="flex items-start gap-2.5">
           <span class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold shrink-0">🛍️</span>
           <div>
-            <div class="font-bold text-slate-900">Shopping Villages (10)</div>
-            <p class="text-slate-500">Waterfront Shops, Scarborough Faire, specialty seafood, and hammock stores.</p>
+            <div class="font-bold text-slate-900">Shopping ({SHOPPING.length})</div>
+            <p class="text-slate-500">Waterfront Shops, Scarborough Faire, Sunshine Family Pharmacy, and markets.</p>
           </div>
         </div>
         <div class="flex items-start gap-2.5">
           <span class="w-6 h-6 rounded-full bg-sky-100 text-sky-800 flex items-center justify-center font-bold shrink-0">🏄</span>
           <div>
-            <div class="font-bold text-slate-900">Activities (10)</div>
+            <div class="font-bold text-slate-900">Activities ({ACTIVITIES.length})</div>
             <p class="text-slate-500">Town Park & Boardwalk, Duck Trail, watersports, bike rentals, and wild horse tours.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-800 flex items-center justify-center font-bold shrink-0">🏛️</span>
+          <div>
+            <div class="font-bold text-slate-900">Services & Safety ({TOWN_SERVICES.length})</div>
+            <p class="text-slate-500">Duck Police Department, Duck Fire Department, and Duck Post Office.</p>
           </div>
         </div>
       </div>

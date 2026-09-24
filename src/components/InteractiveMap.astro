@@ -1,15 +1,16 @@
 ---
-import { COMMUNITY_INFO, RESTAURANTS, SHOPPING, ACTIVITIES, type DirectoryItem } from '../data/area';
+import { COMMUNITY_INFO, RESTAURANTS, SHOPPING, ACTIVITIES, TOWN_SERVICES, type DirectoryItem } from '../data/area';
 
 // Prepare dataset with category types
 interface MapPlace extends DirectoryItem {
-  type: 'restaurant' | 'shopping' | 'activity';
+  type: 'restaurant' | 'shopping' | 'activity' | 'service';
 }
 
 const allPlaces: MapPlace[] = [
   ...RESTAURANTS.map(r => ({ ...r, type: 'restaurant' as const })),
   ...SHOPPING.map(s => ({ ...s, type: 'shopping' as const })),
   ...ACTIVITIES.map(a => ({ ...a, type: 'activity' as const })),
+  ...TOWN_SERVICES.map(sv => ({ ...sv, type: 'service' as const })),
 ];
 
 const initialDataJson = JSON.stringify(allPlaces);
@@ -54,6 +55,13 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
           class="map-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer bg-white text-slate-700 hover:bg-sky-50 hover:text-sky-700 border border-slate-200"
         >
           🏄 Activities ({ACTIVITIES.length})
+        </button>
+        <button
+          type="button"
+          data-filter="service"
+          class="map-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all shadow-xs cursor-pointer bg-white text-slate-700 hover:bg-indigo-50 hover:text-indigo-700 border border-slate-200"
+        >
+          🏛️ Services & Safety ({TOWN_SERVICES.length})
         </button>
       </div>
 
@@ -166,6 +174,7 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       restaurant: createCustomIcon('#e11d48', '🍽️'),
       shopping: createCustomIcon('#059669', '🛍️'),
       activity: createCustomIcon('#0284c7', '🏄'),
+      service: createCustomIcon('#4f46e5', '🏛️'),
     };
 
     const gsCoords = community.coordinates || { lat: 36.1618, lng: -75.7495 };
@@ -237,6 +246,7 @@ const communityJson = JSON.stringify(COMMUNITY_INFO);
       if (paramCat.startsWith('rest')) activeFilter = 'restaurant';
       else if (paramCat.startsWith('shop')) activeFilter = 'shopping';
       else if (paramCat.startsWith('act')) activeFilter = 'activity';
+      else if (paramCat.startsWith('serv') || paramCat.startsWith('safe')) activeFilter = 'service';
     }
 
     // Populate markers
