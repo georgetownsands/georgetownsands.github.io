@@ -92,7 +92,7 @@ export const RESTAURANTS: DirectoryItem[] = [
   {
     
     id: "roadside-bar-grill",
-    coordinates: { lat: 36.1645, lng: -75.7524 },
+    coordinates: { lat: 36.1647, lng: -75.7525 },
     name: "The Roadside Bar & Grill",
     category: "Casual Dining",
     tags: ["Raw Bar", "Outdoor Patio", "Local Favorite", "Live Music"],
